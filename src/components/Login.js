@@ -11,5 +11,14 @@ export const Login = (onNavigate) => {
 
   HomeDiv.appendChild(buttonHome);
 
+  const inputEmail = document.createElement('input');
+  inputEmail.type = 'text';
+  inputEmail.placeholder = 'Email';
+  inputEmail.classList.add('email');
+
+  HomeDiv.appendChild(inputEmail);
+
   return HomeDiv;
 };
+
+
