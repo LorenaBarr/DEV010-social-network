@@ -18,6 +18,22 @@ export const Login = (onNavigate) => {
 
   HomeDiv.appendChild(inputEmail);
 
+  const inputPassword = document.createElement('input');
+  inputPassword.type = 'text';
+  inputPassword.placeholder = 'Password';
+  inputPassword.classList.add('password');
+
+  HomeDiv.appendChild(inputPassword);
+
+  const btnLogin = document.createElement('button');
+  btnLogin.textContent = 'Log In';
+  btnLogin.classList.add('btnTechShare');
+
+  HomeDiv.appendChild(btnLogin);
+
+
+
+
   return HomeDiv;
 };
 
