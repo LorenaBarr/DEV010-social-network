@@ -37,5 +37,3 @@ window.onpopstate = () => {
 };
 
 rootDiv.appendChild(component(onNavigate));
-
-

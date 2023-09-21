@@ -12,50 +12,46 @@ export const Register = (onNavigate) => {
 
   HomeDiv.appendChild(buttonHome);
 
-  
-const inputUser = document.createElement('input');
-inputUser.type = 'text';
-inputUser.placeholder = 'User';
-inputUser.classList.add('user');
+  const inputUser = document.createElement('input');
+  inputUser.type = 'text';
+  inputUser.placeholder = 'User';
+  inputUser.classList.add('user');
 
-HomeDiv.appendChild(inputUser);
+  HomeDiv.appendChild(inputUser);
 
-const inputEmail = document.createElement('input');
-inputEmail.type = 'text';
-inputEmail.placeholder = 'Email';
-inputEmail.classList.add('Email');
+  const inputEmail = document.createElement('input');
+  inputEmail.type = 'text';
+  inputEmail.placeholder = 'Email';
+  inputEmail.classList.add('Email');
 
-HomeDiv.appendChild(inputEmail);
+  HomeDiv.appendChild(inputEmail);
 
-const inputPassword = document.createElement('input');
-inputPassword.type = 'text';
-inputPassword.placeholder = 'Password';
-inputPassword.classList.add('password');
+  const inputPassword = document.createElement('input');
+  inputPassword.type = 'text';
+  inputPassword.placeholder = 'Password';
+  inputPassword.classList.add('password');
 
-HomeDiv.appendChild(inputPassword);
+  HomeDiv.appendChild(inputPassword);
 
-const inputConfirmPassword = document.createElement('input');
-inputConfirmPassword.type = 'text';
-inputConfirmPassword.placeholder = 'Confirm Password';
-inputConfirmPassword.classList.add('confirmPassword');
+  const inputConfirmPassword = document.createElement('input');
+  inputConfirmPassword.type = 'text';
+  inputConfirmPassword.placeholder = 'Confirm Password';
+  inputConfirmPassword.classList.add('confirmPassword');
 
-HomeDiv.appendChild(inputConfirmPassword);
+  HomeDiv.appendChild(inputConfirmPassword);
 
-const btnCreate = document.createElement('button');
-btnCreate.textContent = 'Create Account';
+  const btnCreate = document.createElement('button');
+  btnCreate.textContent = 'Create Account';
 
-HomeDiv.appendChild(btnCreate);
+  HomeDiv.appendChild(btnCreate);
 
-const btnGoogle = document.createElement('button');
-btnGoogle.textContent = 'Google';
+  const btnGoogle = document.createElement('button');
+  btnGoogle.textContent = 'Google';
 
-HomeDiv.appendChild(btnGoogle);
-
+  HomeDiv.appendChild(btnGoogle);
 
   return HomeDiv;
 };
-
-
 // const nameApp = document.createElement('h1');
 //   nameApp.textContent('TechShare');
 //   nameApp.id = 'nameApp';

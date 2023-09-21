@@ -6,38 +6,13 @@ import { GoogleAuthProvider } from "firebase/auth";
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
 //signInWithEmailAndPassword(email, password) {
-signInWithEmailAndPassword(auth, email, password) {
-    .then((userCredential) => {
-        const user = userCredential.user;
-        console.log('usuario');
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error('falla en la matrix', errorCode, errorMessage);
-    });
-}    
-//   const auth = getAuth();
-// signInWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     // Signed in 
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//   });
-
-// const auth = getAuth();
-// createUserWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     // Signed in 
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-//   });
+signInWithEmailAndPassword(auth, email, password) 
+  .then((userCredential) => {
+    const user = userCredential.user;
+    console.log('usuario');
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.error('falla en la matrix', errorCode, errorMessage);
+  });

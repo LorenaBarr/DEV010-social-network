@@ -33,26 +33,21 @@ export const Login = (onNavigate) => {
   btnLogin.classList.add('btnTechShare');
 
   HomeDiv.appendChild(btnLogin);
-  
-  // Agregar elementos al formulario
+
   loginForm.appendChild(inputEmail);
   loginForm.appendChild(inputPassword);
   loginForm.appendChild(btnLogin);
 
-  // Agregar el formulario al div principal
   HomeDiv.appendChild(loginForm);
 
-  // Agregar un evento de envío del formulario
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
     const email = inputEmail.value;
     const password = inputPassword.value;
-  
+
     signInWithEmailAndPassword(email, password);
     // Realizar la lógica de autenticación o cualquier acción necesaria aquí
   });
   return HomeDiv;
 };
-
-
-
