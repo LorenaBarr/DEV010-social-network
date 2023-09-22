@@ -1,6 +1,6 @@
 // import { onNavigate } from "../main.js";
-import { Home } from "./Home";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { Home } from './Home';
+import { createAccount } from '../lib/FireBase';
 
 export const Register = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -61,19 +61,26 @@ export const Register = (onNavigate) => {
   HomeDiv.appendChild(registerForm);
 
 
-  registerForm.addEventListener('submit', (e) => {
+  registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const userRe = inputUser.value;
     const emailRe = inputEmail.value;
     const passwordRe = inputPassword.value;
-    const confirmPasswordRe = inputConfirmPassword.value;
+    const confirmPasswordRe = inputConfirmPassword.value; 
+    // saber como confirmar la contraseña condicional o funcion//
 
-    createUserWithEmailAndPassword(userRe, emailRe, passwordRe, confirmPasswordRe);
+    createAccount(emailRe, passwordRe)
+      .then((userCredential) => {
+      // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      // ..
+      });
   });
   return HomeDiv;
 };
-// const nameApp = document.createElement('h1');
-//   nameApp.textContent('TechShare');
-//   nameApp.id = 'nameApp';
-//   HomeDiv.appendChild(nameApp);
