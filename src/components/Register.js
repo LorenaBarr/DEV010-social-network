@@ -1,6 +1,6 @@
 // import { onNavigate } from "../main.js";
 import { Home } from './Home';
-import { createAccount } from '../lib/FireBase';
+import { createAccount, googleSign } from '../lib/FireBase';
 
 export const Register = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -35,6 +35,20 @@ export const Register = (onNavigate) => {
 
   const btnGoogle = document.createElement('button');
   btnGoogle.textContent = 'Google';
+  btnGoogle.classList.add('btnGoogle');
+
+  btnGoogle.addEventListener('click', () => {
+    googleSign()
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log('Usuario autenticado con Google', user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Error al iniciar sesión con Google', errorCode, errorMessage);
+    });
+  });
 
   HomeDiv.appendChild(btnGoogle);
 

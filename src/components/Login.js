@@ -1,5 +1,5 @@
 // import { onNavigate } from "../main.js";
-import { login } from '../lib/FireBase';
+import { login, googleSign } from '../lib/FireBase';
 //import { auth } from "src/lib/FireBase.js";
 ;
 
