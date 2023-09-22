@@ -1,5 +1,5 @@
 // import { onNavigate } from "../main.js";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { login } from '../lib/FireBase';
 //import { auth } from "src/lib/FireBase.js";
 ;
 
@@ -41,23 +41,23 @@ export const Login = (onNavigate) => {
 
   HomeDiv.appendChild(loginForm);
 
-  loginForm.addEventListener('submit', async (e) => {
+  loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const email = inputEmail.value;
     const password = inputPassword.value;
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-      console.log('usuarioAutenticado', user);
-      onNavigate('/');
-    } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('error al iniciar sesión', errorCode, errorMessage);
+    login(email, password)
+      .then((userCredential)  => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('error al iniciar sesión', errorCode, errorMessage);
     // Realizar la lógica de autenticación o cualquier acción necesaria aquí
-    }
+    })
   });
 
   return HomeDiv;

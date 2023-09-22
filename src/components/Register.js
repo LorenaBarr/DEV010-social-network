@@ -60,8 +60,7 @@ export const Register = (onNavigate) => {
 
   HomeDiv.appendChild(registerForm);
 
-
-  registerForm.addEventListener('submit', async (e) => {
+  registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const userRe = inputUser.value;
@@ -79,7 +78,7 @@ export const Register = (onNavigate) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-      // ..
+        console.error(error);
       });
   });
   return HomeDiv;
