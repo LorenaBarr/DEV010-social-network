@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export const Register = (onNavigate) => {
   const HomeDiv = document.createElement('div');
-  const registerForm = document.createElemente('form');
+  const registerForm = document.createElement('form');
 
   HomeDiv.textContent = 'WelcometoTechShare';
   const buttonHome = document.createElement('button');
@@ -56,10 +56,12 @@ export const Register = (onNavigate) => {
   registerForm.appendChild(inputEmail);
   registerForm.appendChild(inputPassword);
   registerForm.appendChild(inputConfirmPassword);
+  registerForm.appendChild(btnCreate);
 
   HomeDiv.appendChild(registerForm);
 
-  registerForm.addEventListener('submit', (e) =>{
+
+  registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const userRe = inputUser.value;
