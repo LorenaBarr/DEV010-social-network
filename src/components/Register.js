@@ -14,13 +14,6 @@ export const Register = (onNavigate) => {
 
   HomeDiv.appendChild(buttonHome);
 
-  const inputUser = document.createElement('input');
-  inputUser.type = 'text';
-  inputUser.placeholder = 'User';
-  inputUser.classList.add('user');
-
-  HomeDiv.appendChild(inputUser);
-
   const inputEmail = document.createElement('input');
   inputEmail.type = 'email';
   inputEmail.placeholder = 'Email';
@@ -35,13 +28,6 @@ export const Register = (onNavigate) => {
 
   HomeDiv.appendChild(inputPassword);
 
-  const inputConfirmPassword = document.createElement('input');
-  inputConfirmPassword.type = 'password';
-  inputConfirmPassword.placeholder = 'Confirm Password';
-  inputConfirmPassword.classList.add('confirmPassword');
-
-  HomeDiv.appendChild(inputConfirmPassword);
-
   const btnCreate = document.createElement('button');
   btnCreate.textContent = 'Create Account';
 
@@ -52,10 +38,8 @@ export const Register = (onNavigate) => {
 
   HomeDiv.appendChild(btnGoogle);
 
-  registerForm.appendChild(inputUser);
   registerForm.appendChild(inputEmail);
   registerForm.appendChild(inputPassword);
-  registerForm.appendChild(inputConfirmPassword);
   registerForm.appendChild(btnCreate);
 
   HomeDiv.appendChild(registerForm);
@@ -63,10 +47,8 @@ export const Register = (onNavigate) => {
   registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const userRe = inputUser.value;
     const emailRe = inputEmail.value;
     const passwordRe = inputPassword.value;
-    const confirmPasswordRe = inputConfirmPassword.value; 
     // saber como confirmar la contraseña condicional o funcion//
 
     createAccount(emailRe, passwordRe)
