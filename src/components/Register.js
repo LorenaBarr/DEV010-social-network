@@ -1,9 +1,11 @@
 // import { onNavigate } from "../main.js";
-
 import { Home } from "./Home";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export const Register = (onNavigate) => {
   const HomeDiv = document.createElement('div');
+  const registerForm = document.createElemente('form');
+
   HomeDiv.textContent = 'WelcometoTechShare';
   const buttonHome = document.createElement('button');
 
@@ -20,21 +22,21 @@ export const Register = (onNavigate) => {
   HomeDiv.appendChild(inputUser);
 
   const inputEmail = document.createElement('input');
-  inputEmail.type = 'text';
+  inputEmail.type = 'email';
   inputEmail.placeholder = 'Email';
   inputEmail.classList.add('Email');
 
   HomeDiv.appendChild(inputEmail);
 
   const inputPassword = document.createElement('input');
-  inputPassword.type = 'text';
+  inputPassword.type = 'password';
   inputPassword.placeholder = 'Password';
   inputPassword.classList.add('password');
 
   HomeDiv.appendChild(inputPassword);
 
   const inputConfirmPassword = document.createElement('input');
-  inputConfirmPassword.type = 'text';
+  inputConfirmPassword.type = 'password';
   inputConfirmPassword.placeholder = 'Confirm Password';
   inputConfirmPassword.classList.add('confirmPassword');
 
@@ -50,6 +52,23 @@ export const Register = (onNavigate) => {
 
   HomeDiv.appendChild(btnGoogle);
 
+  registerForm.appendChild(inputUser);
+  registerForm.appendChild(inputEmail);
+  registerForm.appendChild(inputPassword);
+  registerForm.appendChild(inputConfirmPassword);
+
+  HomeDiv.appendChild(registerForm);
+
+  registerForm.addEventListener('submit', (e) =>{
+    e.preventDefault();
+
+    const userRe = inputUser.value;
+    const emailRe = inputEmail.value;
+    const passwordRe = inputPassword.value;
+    const confirmPasswordRe = inputConfirmPassword.value;
+
+    createUserWithEmailAndPassword(userRe, emailRe, passwordRe, confirmPasswordRe);
+  });
   return HomeDiv;
 };
 // const nameApp = document.createElement('h1');
