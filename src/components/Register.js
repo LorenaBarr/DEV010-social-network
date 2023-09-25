@@ -1,6 +1,6 @@
 // import { onNavigate } from "../main.js";
 import { Home } from './Home';
-import { createAccount, googleSign } from '../lib/FireBase';
+import { createAccount } from '../lib/FireBase';
 
 export const Register = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -34,7 +34,7 @@ export const Register = (onNavigate) => {
   HomeDiv.appendChild(btnCreate);
 
 
-  HomeDiv.appendChild(btnGoogle);
+  // HomeDiv.appendChild(buttonGoogle);
 
   registerForm.appendChild(inputEmail);
   registerForm.appendChild(inputPassword);
@@ -54,6 +54,7 @@ export const Register = (onNavigate) => {
       // Signed in
         const user = userCredential.user;
         console.log(user);
+        // onNavigate('/feed');
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -1,7 +1,7 @@
 // pantalla de bienvenidad iniciar sesion y registrarse//
 
 // import { onNavigate } from '../main.js';
-
+import { googleSign } from '../lib/FireBase';
 
 
 export const Home = (onNavigate) => {
@@ -41,6 +41,7 @@ export const Home = (onNavigate) => {
    
     buttonLogin.textContent = 'Log In';
     buttonRegister.textContent = 'Sign Up';
+   
 
     buttonLogin.addEventListener('click', () => onNavigate('/login'));
     buttonRegister.addEventListener('click', () => onNavigate('/register'));
@@ -53,12 +54,13 @@ export const Home = (onNavigate) => {
     googleSign()
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log('Usuario autenticado con Google', user);
+      console.log('User identified with Google', user);
+      // onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.error('Error al iniciar sesión con Google', errorCode, errorMessage);
+      console.error('error when starting with google', errorCode, errorMessage);
     });
   });
 

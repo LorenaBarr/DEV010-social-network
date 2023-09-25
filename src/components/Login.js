@@ -51,6 +51,7 @@ export const Login = (onNavigate) => {
       .then((userCredential)  => {
         const user = userCredential.user;
         console.log(user);
+        // onNavigate('/feed');
       })
     .catch((error) => {
         const errorCode = error.code;

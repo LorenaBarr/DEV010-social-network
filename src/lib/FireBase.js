@@ -24,9 +24,14 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
 //export const db = getFirestore(app);
-export const provider = new GoogleAuthProvider();
-export const createAccount = (email, psw) => createUserWithEmailAndPassword(auth, email, psw);
-export const login = (email, psw) => signInWithEmailAndPassword(auth, email, psw);
-export const googleSign = () => { 
+
+export const googleSign = () => {
+  const provider = new GoogleAuthProvider();
   return signInWithPopup(auth, provider);
 };
+
+export const createAccount = (email, psw) => createUserWithEmailAndPassword(auth, email, psw);
+export const login = (email, psw) => signInWithEmailAndPassword(auth, email, psw);
+
+//   return signInWithPopup(auth, provider);
+// };
