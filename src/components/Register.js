@@ -33,22 +33,6 @@ export const Register = (onNavigate) => {
 
   HomeDiv.appendChild(btnCreate);
 
-  const btnGoogle = document.createElement('button');
-  btnGoogle.textContent = 'Google';
-  btnGoogle.classList.add('btnGoogle');
-
-  btnGoogle.addEventListener('click', () => {
-    googleSign()
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log('Usuario autenticado con Google', user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('Error al iniciar sesión con Google', errorCode, errorMessage);
-    });
-  });
 
   HomeDiv.appendChild(btnGoogle);
 

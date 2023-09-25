@@ -37,17 +37,34 @@ export const Home = (onNavigate) => {
     
     const buttonLogin = document.createElement('button');
     const buttonRegister = document.createElement('button');
-
+    const buttonGoogle = document.createElement('button');
    
     buttonLogin.textContent = 'Log In';
-     buttonRegister.textContent = 'Sign Up';
+    buttonRegister.textContent = 'Sign Up';
 
     buttonLogin.addEventListener('click', () => onNavigate('/login'));
     buttonRegister.addEventListener('click', () => onNavigate('/register'));
-
     
+  
+  buttonGoogle.textContent = 'Google';
+  buttonGoogle.classList.add('btnGoogle');
+
+  buttonGoogle.addEventListener('click', () => {
+    googleSign()
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log('Usuario autenticado con Google', user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Error al iniciar sesión con Google', errorCode, errorMessage);
+    });
+  });
+
     HomeDiv.appendChild(buttonLogin);
     HomeDiv.appendChild(buttonRegister);
+    HomeDiv.appendChild(buttonGoogle);
 
    
 
