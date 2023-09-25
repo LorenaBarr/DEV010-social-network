@@ -34,18 +34,20 @@ export const Home = (onNavigate) => {
      console.log(titleElement);
      console.log(sloganElement);
 
-    const buttonRegister = document.createElement('button');
+    
     const buttonLogin = document.createElement('button');
+    const buttonRegister = document.createElement('button');
 
-    buttonRegister.textContent = 'Sign Up';
+   
     buttonLogin.textContent = 'Log In';
-
-    buttonRegister.addEventListener('click', () => onNavigate('/register'));
+     buttonRegister.textContent = 'Sign Up';
 
     buttonLogin.addEventListener('click', () => onNavigate('/login'));
+    buttonRegister.addEventListener('click', () => onNavigate('/register'));
 
-    HomeDiv.appendChild(buttonRegister);
+    
     HomeDiv.appendChild(buttonLogin);
+    HomeDiv.appendChild(buttonRegister);
 
    
 
