@@ -2,11 +2,14 @@
 
 // import { onNavigate } from '../main.js';
 import { googleSign } from '../lib/FireBase';
+import { canvas } from '../lib/index.js';
 
 
 export const Home = (onNavigate) => {
     const HomeDiv = document.createElement('div');
+    
       const logoElement = document.createElement('img');
+      document.body.classList.add('home-body');
      logoElement.src = '../imagenes/logotechshare_360.png'; // Agrega la ruta de tu logo
      logoElement.alt = 'Logo de TechShare'; // Agrega un atributo alt para accesibilidad
      logoElement.classList.add('logo');
@@ -21,7 +24,7 @@ export const Home = (onNavigate) => {
     
  
      const sloganElement = document.createElement('p');
-     sloganElement.textContent = 'Comparte tus ideas y conocimientos'; 
+     sloganElement.textContent = 'Share your ideas & thoughts'; 
  
      // Agregar los elementos al div del encabezado
      // headerDiv.appendChild(logoElement); 
@@ -55,7 +58,7 @@ export const Home = (onNavigate) => {
     .then((userCredential) => {
       const user = userCredential.user;
       console.log('User identified with Google', user);
-      // onNavigate('/feed');
+      onNavigate('/feed');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -63,10 +66,11 @@ export const Home = (onNavigate) => {
       console.error('error when starting with google', errorCode, errorMessage);
     });
   });
-
+    HomeDiv.appendChild(canvas);
     HomeDiv.appendChild(buttonLogin);
     HomeDiv.appendChild(buttonRegister);
     HomeDiv.appendChild(buttonGoogle);
+    
 
    
 

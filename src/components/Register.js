@@ -5,6 +5,7 @@ import { createAccount } from '../lib/FireBase';
 export const Register = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const registerForm = document.createElement('form');
+  document.body.classList.add('register-body');
 
   HomeDiv.textContent = 'WelcometoTechShare';
   const buttonHome = document.createElement('button');
@@ -54,7 +55,7 @@ export const Register = (onNavigate) => {
       // Signed in
         const user = userCredential.user;
         console.log(user);
-        // onNavigate('/feed');
+        onNavigate('/feed');
       })
       .catch((error) => {
         const errorCode = error.code;

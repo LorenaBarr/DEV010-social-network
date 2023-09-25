@@ -7,6 +7,7 @@ export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const loginForm = document.createElement('form');
   HomeDiv.textContent = 'Welcome to TechShare';
+  document.body.classList.add('login-body');
   const buttonHome = document.createElement('button');
 
   buttonHome.textContent = 'Return to Home';
@@ -51,7 +52,7 @@ export const Login = (onNavigate) => {
       .then((userCredential)  => {
         const user = userCredential.user;
         console.log(user);
-        // onNavigate('/feed');
+        onNavigate('/feed');
       })
     .catch((error) => {
         const errorCode = error.code;
