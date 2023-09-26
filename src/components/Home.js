@@ -1,19 +1,15 @@
 import { googleSign } from '../lib/FireBase';
 import { canvas } from '../lib/index.js';
-//import { upDateBackground } from '../main';
 
 export const Home = (onNavigate) => {
   const HomeDiv = document.createElement('div');
-  //upDateBackground('/home');
   const logoElement = document.createElement('img');
   document.body.classList.add('home-body');
   logoElement.src = '../imagenes/logotechshare_360.png'; // Agrega la ruta de tu logo
   logoElement.alt = 'Logo de TechShare'; // Agrega un atributo alt para accesibilidad
   logoElement.classList.add('logo');
-  // Crear un div para el título, el logo y el eslogan
   const headerDiv = document.createElement('div');
-  headerDiv.classList.add('header'); // Agrega clases CSS según sea necesario
-// Crear elementos para el título, el logo y el eslogan
+  headerDiv.classList.add('header');
   const titleElement = document.createElement('h1');
   titleElement.textContent = 'TechShare';
   titleElement.classList.add('title');
@@ -26,24 +22,22 @@ export const Home = (onNavigate) => {
   headerDiv.appendChild(sloganElement);
 
   HomeDiv.appendChild(headerDiv);
-  console.log(titleElement);
-  console.log(sloganElement);
 
   const buttonLogin = document.createElement('button');
   buttonLogin.classList.add('btnAll');
+
   const buttonRegister = document.createElement('button');
   buttonRegister.classList.add('btnAll');
+  
   const buttonGoogle = document.createElement('button');
   buttonGoogle.classList.add('btnAll');
    
   buttonLogin.textContent = 'Log In';
   buttonRegister.textContent = 'Sign Up';
    
-
-    buttonLogin.addEventListener('click', () => onNavigate('/login'));
-    buttonRegister.addEventListener('click', () => onNavigate('/register'));
+  buttonLogin.addEventListener('click', () => onNavigate('/login'));
+  buttonRegister.addEventListener('click', () => onNavigate('/register'));
     
-  
   buttonGoogle.textContent = 'Google';
   buttonGoogle.classList.add('btnGoogle');
 

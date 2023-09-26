@@ -1,9 +1,7 @@
 import { login } from '../lib/FireBase';
-//import { upDateBackground  } from '../main';
 
 export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
-  //upDateBackground('/login');
   const loginForm = document.createElement('form');
   HomeDiv.textContent = 'Welcome to TechShare';
   document.body.classList.add('login-body');
@@ -57,7 +55,7 @@ export const Login = (onNavigate) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error('error al iniciar sesión', errorCode, errorMessage);
-     });
+    });
     return HomeDiv;
   });
 };

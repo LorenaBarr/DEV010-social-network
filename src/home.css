@@ -1,4 +1,4 @@
-@media (max-width : 600px) {
+/*@media (max-width : 1000px) {*/
   .home-body {
     background: #232323;
     display: flex;
@@ -54,4 +54,4 @@ div.header {
   padding: 0.5rem;
   margin: 1rem;
 }
-}
+
