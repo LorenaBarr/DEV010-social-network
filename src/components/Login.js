@@ -1,10 +1,9 @@
-// import { onNavigate } from "../main.js";
-import { login, googleSign } from '../lib/FireBase';
-//import { auth } from "src/lib/FireBase.js";
-;
+import { login } from '../lib/FireBase';
+//import { upDateBackground  } from '../main';
 
 export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
+  //upDateBackground('/login');
   const loginForm = document.createElement('form');
   HomeDiv.textContent = 'Welcome to TechShare';
   document.body.classList.add('login-body');
@@ -54,13 +53,11 @@ export const Login = (onNavigate) => {
         console.log(user);
         onNavigate('/feed');
       })
-    .catch((error) => {
+      .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error('error al iniciar sesión', errorCode, errorMessage);
-    // Realizar la lógica de autenticación o cualquier acción necesaria aquí
-    })
+     });
+    return HomeDiv;
   });
-
-  return HomeDiv;
 };
