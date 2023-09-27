@@ -55,7 +55,8 @@ export const Login = (onNavigate) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error('error al iniciar sesión', errorCode, errorMessage);
-    });
-    return HomeDiv;
+      });
   });
+
+  return HomeDiv;
 };
