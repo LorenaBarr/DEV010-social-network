@@ -10,11 +10,11 @@ export const Login = (onNavigate) => {
 
   HomeDiv.textContent = 'Welcome to TechShare';
   document.body.classList.add('login-body');
-  
+
   buttonHome.textContent = 'Return to Home';
   buttonHome.addEventListener('click', () => onNavigate('/'));
   HomeDiv.appendChild(buttonHome);
-  
+
   inputEmail.type = 'email';
   inputEmail.placeholder = 'Email';
   inputEmail.classList.add('email');
@@ -33,7 +33,7 @@ export const Login = (onNavigate) => {
   loginForm.appendChild(inputPassword);
   loginForm.appendChild(btnLogin);
   HomeDiv.appendChild(loginForm);
-  
+
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -41,7 +41,7 @@ export const Login = (onNavigate) => {
     const password = inputPassword.value;
 
     login(email, password)
-      .then((userCredential)  => {
+      .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
         onNavigate('/feed');
@@ -49,6 +49,7 @@ export const Login = (onNavigate) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        alert('Verificar datos');
         console.error('error al iniciar sesión', errorCode, errorMessage);
       });
   });
