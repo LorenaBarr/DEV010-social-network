@@ -2,27 +2,34 @@ import { login } from '../lib/FireBase';
 
 export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
+  const bienvenidaTS = document.createElement('span');
   const loginForm = document.createElement('form');
   const buttonHome = document.createElement('button');
   const inputEmail = document.createElement('input');
   const inputPassword = document.createElement('input');
   const btnLogin = document.createElement('button');
 
-  HomeDiv.textContent = 'Welcome to TechShare';
+  bienvenidaTS.textContent = 'Welcome to TechShare';
+  bienvenidaTS.classList.add('bienvenida');
+  HomeDiv.appendChild(bienvenidaTS);
+
   document.body.classList.add('login-body');
 
-  buttonHome.textContent = 'Return to Home';
+  buttonHome.textContent = 'H';
+  buttonHome.classList.add('btnHome');
+  HomeDiv.appendChild(buttonHome);
+
   buttonHome.addEventListener('click', () => onNavigate('/'));
   HomeDiv.appendChild(buttonHome);
 
   inputEmail.type = 'email';
   inputEmail.placeholder = 'Email';
-  inputEmail.classList.add('email');
+  inputEmail.classList.add('inputLogin', 'inputEm');
   HomeDiv.appendChild(inputEmail);
 
   inputPassword.type = 'password';
   inputPassword.placeholder = 'Password';
-  inputPassword.classList.add('password');
+  inputPassword.classList.add('inputLogin', 'inputPw');
   HomeDiv.appendChild(inputPassword);
 
   btnLogin.textContent = 'Log In';
