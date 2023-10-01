@@ -1,15 +1,5 @@
 import { Login } from '../src/components/Login';
 
-// describe('should return button navigate to "/"', () => {
-//   const onNavigate = jest.fn(); // crea una función simuladas
-//   const loginComponent = Login(onNavigate);
-//   const buttonHome = loginComponent.querySelector('button');
-
-//   buttonHome.click();
-
-//   expect(onNavigate).toHaveBeenCalledWith('/');
-// });
-
 describe('click "Return to home" button navigate to "/"', () => {
   it('should return home with button', () => {
     const onNavigate = jest.fn();
@@ -25,18 +15,23 @@ describe('click "Return to home" button navigate to "/"', () => {
     const onNavigate = jest.fn();
     const loginComponent = Login(onNavigate);
 
-    const loginForm = loginComponen.querySelector('form');
     const inputEmail = loginComponent.querySelector('input.email');
     const inputPassword = loginComponent.querySelector('input.password');
+    const buttonLogin = loginComponent.querySelector('button.btnLogin');
 
     inputEmail.value = 'email@example.com';
     inputPassword.value = 'password';
 
-    loginForm.dispatchEvent(new Event('submit'));
+    buttonLogin.click();
 
-    expect(onNavigate).toHaveBeenCalledWith('/feed');
-  }),
-  
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        expect(onNavigate).toHaveBeenCalledWith('/feed');
+        resolve();
+      }, 1000);
+    });
+  });
+
   it('login form with invalid credetencials should show an error', () => {
     const alertSpy = jest.spyOn(window, 'alert');
 
@@ -53,5 +48,15 @@ describe('click "Return to home" button navigate to "/"', () => {
     expect(alertSpy).toHaveBeenCalledWith('Verificar datos');
 
     alertSpy.mockRestore();
-  }),
+  });
 });
+
+// describe('should return button navigate to "/"', () => {
+//   const onNavigate = jest.fn(); // crea una función simuladas
+//   const loginComponent = Login(onNavigate);
+//   const buttonHome = loginComponent.querySelector('button');
+
+//   buttonHome.click();
+
+//   expect(onNavigate).toHaveBeenCalledWith('/');
+// });
