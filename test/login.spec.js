@@ -3,46 +3,48 @@
  */
 import '@testing-library/jest-dom';
 import { Login } from '../src/components/Login';
+// import fetch from 'node-fetch';
+// globalThis.fetch = fetch;
 
-describe('it a function', () => {
+describe('it a function should enter to feed by email and password, and return to home', () => {
   it('should return home with button', () => {
     const onNavigate = jest.fn();
     const loginComponent = Login(onNavigate);
-    const buttonHome = loginComponent.querySelector('.btnHome');
+    const buttonHome = loginComponent.querySelector('#buttonHome');
 
     buttonHome.click();
 
     expect(onNavigate).toHaveBeenCalledWith('/');
   });
 
-  it('submit login form with valid credentials should log in and navigate to "/feed"', () => {
+  it('credentials valid should log in and navigate to "/feed"', async () => {
     const onNavigate = jest.fn();
     const loginComponent = Login(onNavigate);
-
     const inputEmail = loginComponent.querySelector('#inputEmail');
     const inputPassword = loginComponent.querySelector('#inputPassword');
-    const buttonLogin = loginComponent.querySelector('#btnLogIn');
+    const buttonLogin = loginComponent.querySelector('#buttonLogIn');
 
     inputEmail.value = 'email@example.com';
     inputPassword.value = 'password';
 
     buttonLogin.click();
 
-    return new Promise((resolve) => {
+    await new Promise((resolve) => {
       setTimeout(() => {
-        expect(onNavigate).toHaveBeenCalledWith('/feed');
         resolve();
-      }, 5000);
+      }, 15000);
     });
+
+    expect(onNavigate).toHaveBeenCalledWith('/feed');
   });
 
   it('login form with invalid credetencials should show an error', () => {
     const alertSpy = jest.spyOn(window, 'alert');
 
     const loginComponent = Login(() => {});
-    const loginForm = loginComponent.querySelector('form');
-    const inputEmail = loginComponent.querySelector('input.email');
-    const inputPassword = loginComponent.querySelector('input.password');
+    const loginForm = loginComponent.querySelector('#loginForm');
+    const inputEmail = loginComponent.querySelector('#inputEmail');
+    const inputPassword = loginComponent.querySelector('#inputPassword');
 
     inputEmail.value = 'email_invalid';
     inputPassword.value = 'password_invalid';
@@ -54,13 +56,3 @@ describe('it a function', () => {
     alertSpy.mockRestore();
   });
 });
-
-// describe('should return button navigate to "/"', () => {
-//   const onNavigate = jest.fn(); // crea una función simuladas
-//   const loginComponent = Login(onNavigate);
-//   const buttonHome = loginComponent.querySelector('button');
-
-//   buttonHome.click();
-
-//   expect(onNavigate).toHaveBeenCalledWith('/');
-// });

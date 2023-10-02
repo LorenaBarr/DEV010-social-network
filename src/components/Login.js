@@ -1,41 +1,44 @@
 import { login } from '../lib/FireBase';
+import { showAlert } from './utils';
 
 export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
-  const bienvenidaTS = document.createElement('span');
+  const welcomeTS = document.createElement('span');
   const loginForm = document.createElement('form');
   const buttonHome = document.createElement('button');
   const inputEmail = document.createElement('input');
   const inputPassword = document.createElement('input');
   const btnLogin = document.createElement('button');
 
-  bienvenidaTS.textContent = 'Welcome to TechShare';
-  bienvenidaTS.classList.add('bienvenida');
-  HomeDiv.appendChild(bienvenidaTS);
+  welcomeTS.textContent = 'Welcome to TechShare';
+  welcomeTS.classList.add('bienvenida');
+  HomeDiv.appendChild(welcomeTS);
 
   document.body.classList.add('login-body');
 
   buttonHome.textContent = 'H';
+  buttonHome.id = 'buttonHome';
   buttonHome.classList.add('btnHome');
   HomeDiv.appendChild(buttonHome);
 
   buttonHome.addEventListener('click', () => onNavigate('/'));
   HomeDiv.appendChild(buttonHome);
 
+  loginForm.id = 'loginForm';
   inputEmail.type = 'email';
   inputEmail.placeholder = 'Email';
   inputEmail.id = 'inputEmail';
-  inputEmail.classList.add('inputLogin', 'inputEm');
+  inputEmail.classList.add('inputs', 'inputEm');
   HomeDiv.appendChild(inputEmail);
 
   inputPassword.type = 'password';
   inputPassword.placeholder = 'Password';
   inputPassword.id = 'inputPassword';
-  inputPassword.classList.add('inputLogin', 'inputPw');
+  inputPassword.classList.add('inputs', 'inputPw');
   HomeDiv.appendChild(inputPassword);
 
   btnLogin.textContent = 'Log In';
-  btnLogin.id = 'btnLogIn';
+  btnLogin.id = 'buttonLogIn';
   btnLogin.classList.add('btnTechShare');
   HomeDiv.appendChild(btnLogin);
 
@@ -59,7 +62,7 @@ export const Login = (onNavigate) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert('Verificar datos');
+        showAlert('Verificar datos');
         console.error('error al iniciar sesión', errorCode, errorMessage);
       });
   });
