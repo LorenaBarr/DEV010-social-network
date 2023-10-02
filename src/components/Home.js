@@ -1,5 +1,5 @@
 import { googleSign } from '../lib/FireBase';
-// import { canvas } from '../lib/index.js';
+
 
 export const Home = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -21,7 +21,7 @@ export const Home = (onNavigate) => {
   sloganElement.textContent = 'Share your ideas & thoughts';
   sloganElement.classList.add('slogan');
 
-  // HomeDiv.appendChild(canvas);
+ 
   headerDiv.appendChild(logoElement);
   headerDiv.appendChild(titleElement);
   headerDiv.appendChild(sloganElement);
