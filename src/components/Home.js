@@ -1,5 +1,5 @@
 import { googleSign } from '../lib/FireBase';
-import { canvas } from '../lib/index.js';
+//import { canvas } from '../lib/index.js';
 
 export const Home = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -54,7 +54,7 @@ export const Home = (onNavigate) => {
         console.error('error when starting with google', errorCode, errorMessage);
       });
   });
-  HomeDiv.appendChild(canvas);
+  //HomeDiv.appendChild(canvas);
   HomeDiv.appendChild(buttonLogin);
   HomeDiv.appendChild(buttonRegister);
   HomeDiv.appendChild(buttonGoogle);

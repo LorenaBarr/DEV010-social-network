@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+import '@testing-library/jest-dom';
 import { Login } from '../src/components/Login';
 
 describe('click "Return to home" button navigate to "/"', () => {
