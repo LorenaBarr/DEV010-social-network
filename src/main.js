@@ -9,7 +9,7 @@ const routes = {
   '/': Home,
   '/register': Register,
   '/login': Login,
-  '/feed': Feed,
+  //'/feed': Feed,
 };
 
 export const onNavigate = (pathname) => {
