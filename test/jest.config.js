@@ -1,3 +1,3 @@
 module.exports = {
-  testEnvironment: 'jest-environment-jsdom',
+    testEnvironment: 'jsdom', // entorno jsdom para emular un navegador
 };
