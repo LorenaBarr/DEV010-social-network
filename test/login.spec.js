@@ -32,7 +32,7 @@ describe('it a function should enter to feed by email and password, and return t
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 15000);
+      }, 10000);
     });
 
     expect(onNavigate).toHaveBeenCalledWith('/feed');

@@ -1,5 +1,12 @@
 import { login } from '../lib/FireBase';
-import { showAlert } from './utils';
+
+const showAlert = (message) => {
+  if (typeof window !== 'undefined' && window.alert) {
+    window.alert(message);
+  } else {
+    console.error(message);
+  }
+};
 
 export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
