@@ -1,4 +1,3 @@
-/* Establece el estilo para el contenedor principal */
 body {
   margin: 0;
   overflow: hidden; /* Para ocultar el desplazamiento vertical */
@@ -21,119 +20,129 @@ body {
   width: 100%; /* Ocupa todo el ancho de la ventana */
   height: 100%; /* Ocupa todo el alto de la ventana */
   z-index: -1; /* Coloca el canvas detrás de otros elementos */
-  /* Otros estilos para el canvas */
+  
 }
 
 /* Establece el estilo para el contenedor de contenido (centrado) */
 #root {
   background-color: rgba(73, 73, 73, 0.8); /* Fondo semi-transparente para el contenido */
-  padding: 20px; /* Agrega espacio alrededor del contenido */
+  padding: 5rem; /* Agrega espacio alrededor del contenido */
   /* Otros estilos para el contenedor de contenido */
   display: flex;
   flex-direction: column;
   justify-content: center; /* Centra los elementos verticalmente */
   align-items: center; /* Centra los elementos horizontalmente */
+  border-radius: 2rem;
 }
 
 .logo{
   width: 6rem;
   position: relative;
-  border-radius: 50px;
+  border-radius: 3rem;
   opacity: 0.5;
 }
 
 .header {
-  padding: 20px; /* Agrega espacio alrededor del encabezado */
+  padding: 1.3rem; /* Agrega espacio alrededor del encabezado */
   text-align: center; /* Centra el texto horizontalmente */
   /* Otros estilos para el encabezado si es necesario */
+  font-family: 'Pixelify Sans', cursive;
+  font-size: 1rem;
+  color:#fff
+  
+}
+
+h1 {
+  letter-spacing: 0.5rem;
 }
 
 #button-container {
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: space-around;
 }
 
 .btnAll {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 18px;
+  margin: 0.3rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btnGoogle {
+
+#googleButton {
   background-color: #4285F4;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3rem;
+  margin-left: 7rem;
+  margin-top: 1rem;
+  width: 5rem;
 }
 
- /* @media screen and (max-width: 768px) {
-  .home-body {
-    background: #232323;
+@media screen and (max-width: 375px) {
+  body {
+    overflow: auto; 
     display: flex;
-    flex-direction: column;
-    align-items: center;
+  }
+
+  /* Ajusta el estilo del contenedor principal para móvil */
+  #container {
+    height: auto; 
     justify-content: center;
-    height: 100vh; */
+    align-items: center;
+  }
 
-}
-/* #canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%; /* Ocupa todo el ancho disponible */
-  /* height: 100%; /* Ocupa todo el alto disponible */
-  z-index: -1; /* Un valor negativo coloca el canvas detrás de otros elementos */
-} */ */
+  /* Establece el estilo para el canvas (fondo) en móvil */
+  #canvas {
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: -1;
+  }
 
-/* div {
-  display: flex;
-  flex-direction: column;
-
-}  */
-/* div.header {
-  margin: 3rem;
-  /*background-color: rgba(141, 140, 140, 0.10);*/
-  border-radius: 1rem;
-  text-align: center;
-  color: rgb(241, 231, 218);
-  width: 18rem;
-}  */
-/* .logo{
-  width: 6rem;
-  position: relative;
-  /* left: 5rem; */
-  top: 1rem;
-  margin: auto;
-  margin-bottom: 1rem;
-  border-radius: 50px;
-  opacity: 0.5;
-}    */
-/* .title {
-  position: relative;
-  top: 1rem;
-  right: 0.8rem;
-  margin-bottom: 1rem;
-  margin: auto;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}  */
-/* .slogan {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.2rem;
-  position: relative;
-  margin-bottom: 1rem;
-  top: 3rem;
-  margin: auto;
-
-}  */
-/* .btnAll {
-  position: relative;
-  top: 5rem;
-  font-size: 1rem;
-  border-radius: 1rem;
-  padding: 0.5rem;
+  /* Resto de los estilos para móvil */
+  #root {
+  width: 13rem;
   margin: 1rem;
-} */
+  margin-left: -0.2rem;  
+  margin-right: -0.3rem;
+  }
+
+  .logo {
+    /* Estilos para el logo en móvil */
+    width: 4rem; /* Reduzca el tamaño del logo en móvil */
+    border-radius: 2rem;
+  }
+
+  .header {
+    font-size: 1rem; 
+  }
+
+  h1 {
+    
+    letter-spacing: 0.3rem; 
+  }
+
+  #button-container {
+    
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+ 
+  .btnAll {
+    font-size: 0.9rem; 
+  }
+
+  #googleButton {
+  width: 20%; 
+  }
 }
 
+
+ 
