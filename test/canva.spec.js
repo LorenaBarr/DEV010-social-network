@@ -1,0 +1,1 @@
+// import { canvas } from '../src/lib/index.js'; 
