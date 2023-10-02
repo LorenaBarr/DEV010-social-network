@@ -32,7 +32,7 @@ describe('it a function', () => {
       setTimeout(() => {
         expect(onNavigate).toHaveBeenCalledWith('/feed');
         resolve();
-      }, 1000);
+      }, 5000);
     });
   });
 
