@@ -1,6 +1,5 @@
 import { googleSign } from '../lib/FireBase';
 
-
 export const Home = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const logoElement = document.createElement('img');

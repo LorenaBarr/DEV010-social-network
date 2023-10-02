@@ -2,41 +2,46 @@ import { login } from '../lib/FireBase';
 
 export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
+  const bienvenidaTS = document.createElement('span');
   const loginForm = document.createElement('form');
-  HomeDiv.textContent = 'Welcome to TechShare';
-  document.body.classList.add('login-body');
   const buttonHome = document.createElement('button');
+  const inputEmail = document.createElement('input');
+  const inputPassword = document.createElement('input');
+  const btnLogin = document.createElement('button');
 
-  buttonHome.textContent = 'Return to Home';
+  bienvenidaTS.textContent = 'Welcome to TechShare';
+  bienvenidaTS.classList.add('bienvenida');
+  HomeDiv.appendChild(bienvenidaTS);
 
-  buttonHome.addEventListener('click', () => onNavigate('/'));
+  document.body.classList.add('login-body');
 
+  buttonHome.textContent = 'H';
+  buttonHome.classList.add('btnHome');
   HomeDiv.appendChild(buttonHome);
 
-  const inputEmail = document.createElement('input');
+  buttonHome.addEventListener('click', () => onNavigate('/'));
+  HomeDiv.appendChild(buttonHome);
+
   inputEmail.type = 'email';
   inputEmail.placeholder = 'Email';
-  inputEmail.classList.add('email');
-
+  inputEmail.id = 'inputEmail';
+  inputEmail.classList.add('inputLogin', 'inputEm');
   HomeDiv.appendChild(inputEmail);
 
-  const inputPassword = document.createElement('input');
   inputPassword.type = 'password';
   inputPassword.placeholder = 'Password';
-  inputPassword.classList.add('password');
-
+  inputPassword.id = 'inputPassword';
+  inputPassword.classList.add('inputLogin', 'inputPw');
   HomeDiv.appendChild(inputPassword);
 
-  const btnLogin = document.createElement('button');
   btnLogin.textContent = 'Log In';
+  btnLogin.id = 'btnLogIn';
   btnLogin.classList.add('btnTechShare');
-
   HomeDiv.appendChild(btnLogin);
 
   loginForm.appendChild(inputEmail);
   loginForm.appendChild(inputPassword);
   loginForm.appendChild(btnLogin);
-
   HomeDiv.appendChild(loginForm);
 
   loginForm.addEventListener('submit', (e) => {
@@ -46,7 +51,7 @@ export const Login = (onNavigate) => {
     const password = inputPassword.value;
 
     login(email, password)
-      .then((userCredential)  => {
+      .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
         onNavigate('/feed');
@@ -54,6 +59,7 @@ export const Login = (onNavigate) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        alert('Verificar datos');
         console.error('error al iniciar sesión', errorCode, errorMessage);
       });
   });

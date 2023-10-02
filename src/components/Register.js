@@ -1,5 +1,3 @@
-// import { onNavigate } from "../main.js";
-import { Home } from './Home';
 import { createAccount } from '../lib/FireBase';
 
 export const Register = (onNavigate) => {
@@ -34,9 +32,6 @@ export const Register = (onNavigate) => {
 
   HomeDiv.appendChild(btnCreate);
 
-
-  // HomeDiv.appendChild(buttonGoogle);
-
   registerForm.appendChild(inputEmail);
   registerForm.appendChild(inputPassword);
   registerForm.appendChild(btnCreate);
@@ -60,7 +55,7 @@ export const Register = (onNavigate) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error(error);
+        console.error(error, errorCode, errorMessage);
       });
   });
   return HomeDiv;

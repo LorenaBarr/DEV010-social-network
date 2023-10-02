@@ -1,15 +1,17 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+  GoogleAuthProvider, signInWithPopup,
+} from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDUapyJiYR7BeMGzuAtLUTDJkaX7dTZA2s",
-  authDomain: "techshare-ahora-if.firebaseapp.com",
-  projectId: "techshare-ahora-if",
-  storageBucket: "techshare-ahora-if.appspot.com",
-  messagingSenderId: "132208508253",
-  appId: "1:132208508253:web:7b3c4a9040db69ec19fcb4"
+  apiKey: 'AIzaSyDUapyJiYR7BeMGzuAtLUTDJkaX7dTZA2s',
+  authDomain: 'techshare-ahora-if.firebaseapp.com',
+  projectId: 'techshare-ahora-if',
+  storageBucket: 'techshare-ahora-if.appspot.com',
+  messagingSenderId: '132208508253',
+  appId: '1:132208508253:web:7b3c4a9040db69ec19fcb4',
 };
 
 const app = initializeApp(firebaseConfig);
