@@ -4,11 +4,11 @@
 import '@testing-library/jest-dom';
 import { Login } from '../src/components/Login';
 
-describe('click "Return to home" button navigate to "/"', () => {
+describe('it a function', () => {
   it('should return home with button', () => {
     const onNavigate = jest.fn();
     const loginComponent = Login(onNavigate);
-    const buttonHome = loginComponent.querySelector('button');
+    const buttonHome = loginComponent.querySelector('.btnHome');
 
     buttonHome.click();
 
@@ -19,9 +19,9 @@ describe('click "Return to home" button navigate to "/"', () => {
     const onNavigate = jest.fn();
     const loginComponent = Login(onNavigate);
 
-    const inputEmail = loginComponent.querySelector('input.email');
-    const inputPassword = loginComponent.querySelector('input.password');
-    const buttonLogin = loginComponent.querySelector('button.btnLogin');
+    const inputEmail = loginComponent.querySelector('#inputEmail');
+    const inputPassword = loginComponent.querySelector('#inputPassword');
+    const buttonLogin = loginComponent.querySelector('#btnLogIn');
 
     inputEmail.value = 'email@example.com';
     inputPassword.value = 'password';

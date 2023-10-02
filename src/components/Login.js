@@ -24,15 +24,18 @@ export const Login = (onNavigate) => {
 
   inputEmail.type = 'email';
   inputEmail.placeholder = 'Email';
+  inputEmail.id = 'inputEmail';
   inputEmail.classList.add('inputLogin', 'inputEm');
   HomeDiv.appendChild(inputEmail);
 
   inputPassword.type = 'password';
   inputPassword.placeholder = 'Password';
+  inputPassword.id = 'inputPassword';
   inputPassword.classList.add('inputLogin', 'inputPw');
   HomeDiv.appendChild(inputPassword);
 
   btnLogin.textContent = 'Log In';
+  btnLogin.id = 'btnLogIn';
   btnLogin.classList.add('btnTechShare');
   HomeDiv.appendChild(btnLogin);
 
