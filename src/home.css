@@ -71,17 +71,23 @@ h1 {
   box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-
 #googleButton {
-  background-color: #4285F4;
-  color: #fff;
+  
+  background-color: transparent;
   border: none;
   border-radius: 0.3rem;
-  margin-left: 7rem;
-  margin-top: 1rem;
-  width: 5rem;
-}
+  width: 1rem;
+  height: 1rem;
+  margin-left: 2.2rem;
+  margin-top: 2rem;
 
+} 
+
+#imgGoogle {
+  margin: 0;
+  padding: 0;
+  width: 12rem;
+}
 @media screen and (max-width: 375px) {
   body {
     overflow: auto; 

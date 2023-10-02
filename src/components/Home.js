@@ -1,5 +1,5 @@
 import { googleSign } from '../lib/FireBase';
-import { canvas } from '../lib/index.js';
+// import { canvas } from '../lib/index.js';
 
 export const Home = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -21,7 +21,7 @@ export const Home = (onNavigate) => {
   sloganElement.textContent = 'Share your ideas & thoughts';
   sloganElement.classList.add('slogan');
 
-  HomeDiv.appendChild(canvas);
+  // HomeDiv.appendChild(canvas);
   headerDiv.appendChild(logoElement);
   headerDiv.appendChild(titleElement);
   headerDiv.appendChild(sloganElement);
@@ -43,10 +43,13 @@ export const Home = (onNavigate) => {
   buttonRegister.id = 'registerButton';
 
   const buttonGoogle = document.createElement('button');
-  buttonGoogle.textContent = 'Google';
+  const imgGoogle = document.createElement('img');
+  imgGoogle.src = '../imagenes/signin-assets (1)/google_signin_buttons/web/2x/btn_google_signin_light_pressed_web@2x.png';
+  imgGoogle.alt = 'diseño botón de google';
+  imgGoogle.id = 'imgGoogle';
   buttonGoogle.classList.add('btnGoogle');
   buttonGoogle.id = 'googleButton';
-
+  buttonGoogle.appendChild(imgGoogle);
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
 
