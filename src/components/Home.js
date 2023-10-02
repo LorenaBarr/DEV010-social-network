@@ -1,5 +1,5 @@
 import { googleSign } from '../lib/FireBase';
-import { canvas } from '../lib/index.js';
+// import { canvas } from '../lib/index.js';
 
 export const Home = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -28,36 +28,40 @@ export const Home = (onNavigate) => {
 
   const buttonRegister = document.createElement('button');
   buttonRegister.classList.add('btnAll');
-  
+
   const buttonGoogle = document.createElement('button');
   buttonGoogle.classList.add('btnAll');
-   
+
   buttonLogin.textContent = 'Log In';
   buttonRegister.textContent = 'Sign Up';
-   
+  buttonLogin.id = 'loginButton';
+  buttonRegister.id = 'registerButton';
+
+
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
-    
+
   buttonGoogle.textContent = 'Google';
   buttonGoogle.classList.add('btnGoogle');
+  buttonGoogle.id = 'googleButton';
 
   buttonGoogle.addEventListener('click', () => {
     googleSign()
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log('User identified with Google', user);
-      onNavigate('/feed');
-    })
-  .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('error when starting with google', errorCode, errorMessage);
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log('User identified with Google', user);
+        onNavigate('/feed');
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('error when starting with google', errorCode, errorMessage);
+      });
   });
-  });
-  HomeDiv.appendChild(canvas);
+  // HomeDiv.appendChild(canvas);
   HomeDiv.appendChild(buttonLogin);
   HomeDiv.appendChild(buttonRegister);
   HomeDiv.appendChild(buttonGoogle);
-    
+
   return HomeDiv;
 };
