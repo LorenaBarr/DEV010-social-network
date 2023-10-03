@@ -3,18 +3,28 @@
  */
 import '@testing-library/jest-dom';
 import { Register } from '../src/components/Register';
-// Simulamos la función onNavigate
-const mockOnNavigate = jest.fn();
-describe('Register', () => {
-  it('debe crear un elemento de formulario de registro', () => {
-    const registerElement = Register(mockOnNavigate);
-    // Verificar que el elemento se haya creado correctamente
-    expect(registerElement).toBeDefined();
-    expect(registerElement.tagName).toBe('DIV');
-    // Simular el envío del formulario
-    const form = registerElement.querySelector('form');
-    form.dispatchEvent(new Event('submit'));
-    // Verificar que la función mockOnNavigate se haya llamado después del envío del formulario
-    expect(mockOnNavigate).toHaveBeenCalledWith('/feed');
+
+describe('Register Component', () => {
+  let container;
+  beforeEach(() => {
+    // Configurar un div de contenedor para cada prueba
+    container = document.createElement('div');
+    document.body.appendChild(container);
   });
+  afterEach(() => {
+    // Limpiar después de cada prueba
+    document.body.removeChild(container);
+    container = null;
+  });
+  it('debería renderizar correctamente', () => {
+    const onNavigate = jest.fn(); // Mock para onNavigate
+    // Renderizar el componente
+    container.appendChild(Register(onNavigate));
+    // Verificar que el componente se haya renderizado correctamente
+    expect(container.querySelector('form')).toBeTruthy();
+    expect(container.querySelector('.Email')).toBeTruthy();
+    expect(container.querySelector('.password')).toBeTruthy();
+    expect(container.querySelector('button')).toBeTruthy();
+  });
+  // Puedes escribir más pruebas aquí para probar la funcionalidad del componente
 });

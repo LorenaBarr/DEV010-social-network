@@ -62,7 +62,7 @@ export const Home = (onNavigate) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error('error when starting with google', errorCode, errorMessage);
+        //console.error('error when starting with google', errorCode, errorMessage);
       });
   });
   // botones al contenddor//

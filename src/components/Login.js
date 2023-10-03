@@ -63,9 +63,7 @@ export const Login = (onNavigate) => {
     const password = inputPassword.value;
 
     login(email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
+      .then(() => {
         onNavigate('/feed');
       })
       .catch((error) => {

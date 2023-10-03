@@ -1,3 +1,4 @@
+import { Home } from './Home';
 import { createAccount } from '../lib/FireBase';
 
 export const Register = (onNavigate) => {
