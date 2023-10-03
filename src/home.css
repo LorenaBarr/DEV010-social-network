@@ -2,7 +2,7 @@ body {
   margin: 0;
   overflow: hidden; /* Para ocultar el desplazamiento vertical */
   position: relative; /* Añade position:relative para que los elementos se apilen */
-  background-color: rgb(0, 0, 0);
+  background-color: #303030;
 }
 
 #container {
