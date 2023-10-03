@@ -32,6 +32,5 @@ export const postFeed = (onNavigate) => {
         console.log(error);
       })
   })
-
   return HomeDiv;
 };
