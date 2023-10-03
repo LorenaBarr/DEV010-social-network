@@ -1,7 +1,6 @@
 import { createPost } from '../lib/FireBase.js';
 
 export const postFeed = () => {
-  console.log('Feed!');
   const HomeDiv = document.createElement('div');
 
   const headingPost = document.createElement('h2');
@@ -27,7 +26,7 @@ export const postFeed = () => {
     };
     createPost(newPost)
       .then(() => {
-        console.log('prueba');
+        console.log(newPost);
       })
       .catch((error) => {
         console.log(error);
