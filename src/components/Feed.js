@@ -1,6 +1,7 @@
-import { createPost } from 'firebase/firestore';
+import { createPost } from '../lib/FireBase.js';
 
-export const postFeed = (onNavigate) => {
+export const postFeed = () => {
+  console.log('Feed!');
   const HomeDiv = document.createElement('div');
 
   const headingPost = document.createElement('h2');
@@ -15,22 +16,22 @@ export const postFeed = (onNavigate) => {
   buttonPost.id = 'btn-post';
   buttonPost.textContent = 'Share';
 
-  postFeed.appendChild(headingPost);
-  postFeed.appendChild(textareaPost);
-  postFeed.appendChild(buttonPost);
+  HomeDiv.appendChild(headingPost);
+  HomeDiv.appendChild(inputPost);
+  HomeDiv.appendChild(buttonPost);
 
   buttonPost.addEventListener('click', () => {
     const newPost = {
       datePost: new Date(),
-      textPost: inputPost.value
-    }
+      textPost: inputPost.value,
+    };
     createPost(newPost)
       .then(() => {
         console.log('prueba');
       })
       .catch((error) => {
         console.log(error);
-      })
-  })
+      });
+  });
   return HomeDiv;
 };
