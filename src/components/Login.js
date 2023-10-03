@@ -12,12 +12,13 @@ export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const welcomeTS = document.createElement('span');
   const loginForm = document.createElement('form');
+  const imgHome = document.createElement('img');
   const buttonHome = document.createElement('button');
   const inputEmail = document.createElement('input');
   const inputPassword = document.createElement('input');
   const btnLogin = document.createElement('button');
 
-  welcomeTS.textContent = 'Welcome to TechShare';
+  welcomeTS.id = 'titleLogin';
   welcomeTS.classList.add('bienvenida');
   HomeDiv.appendChild(welcomeTS);
 
@@ -26,6 +27,7 @@ export const Login = (onNavigate) => {
   buttonHome.textContent = 'H';
   buttonHome.id = 'buttonHome';
   buttonHome.classList.add('btnHome');
+  imgHome.appendChild(buttonHome);
   HomeDiv.appendChild(buttonHome);
 
   buttonHome.addEventListener('click', () => onNavigate('/'));
@@ -35,18 +37,18 @@ export const Login = (onNavigate) => {
   inputEmail.type = 'email';
   inputEmail.placeholder = 'Email';
   inputEmail.id = 'inputEmail';
-  inputEmail.classList.add('inputs', 'inputEm');
+  inputEmail.classList.add('inputLogin', 'inputEm');
   HomeDiv.appendChild(inputEmail);
 
   inputPassword.type = 'password';
   inputPassword.placeholder = 'Password';
   inputPassword.id = 'inputPassword';
-  inputPassword.classList.add('inputs', 'inputPw');
+  inputPassword.classList.add('inputLogin', 'inputPw');
   HomeDiv.appendChild(inputPassword);
 
   btnLogin.textContent = 'Log In';
   btnLogin.id = 'buttonLogIn';
-  btnLogin.classList.add('btnTechShare');
+  btnLogin.classList.add('btnEnterTS');
   HomeDiv.appendChild(btnLogin);
 
   loginForm.appendChild(inputEmail);
