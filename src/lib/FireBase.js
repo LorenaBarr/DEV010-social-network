@@ -3,7 +3,7 @@ import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
   GoogleAuthProvider, signInWithPopup,
 } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDUapyJiYR7BeMGzuAtLUTDJkaX7dTZA2s',
@@ -27,3 +27,9 @@ export const googleSign = () => {
 
 export const createAccount = (email, psw) => createUserWithEmailAndPassword(auth, email, psw);
 export const login = (email, psw) => signInWithEmailAndPassword(auth, email, psw);
+
+export const createPost = (obj) => {
+  return addDoc(collection(db, "postFeed"), {
+    ...obj
+  })
+};
