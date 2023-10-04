@@ -14,6 +14,7 @@ export const Login = (onNavigate) => {
   const loginForm = document.createElement('form');
   const imgHome = document.createElement('img');
   const buttonHome = document.createElement('button');
+  const iconHome = document.createElement('i');
   const inputEmail = document.createElement('input');
   const inputPassword = document.createElement('input');
   const btnLogin = document.createElement('button');
@@ -24,9 +25,12 @@ export const Login = (onNavigate) => {
 
   document.body.classList.add('login-body');
 
-  buttonHome.textContent = 'H';
   buttonHome.id = 'buttonHome';
   buttonHome.classList.add('btnHome');
+  iconHome.className = 'fas fa-arrow-left';
+  buttonHome.appendChild(iconHome);
+  buttonHome.appendChild(document.createTextNode('Return'));
+  document.body.appendChild(buttonHome);
   imgHome.appendChild(buttonHome);
   HomeDiv.appendChild(buttonHome);
 

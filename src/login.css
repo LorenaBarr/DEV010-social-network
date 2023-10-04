@@ -5,19 +5,20 @@
     display: flex;
     justify-content: center;
 }
+#root {
 
+}
 .btnHome {
-    background: #284817;
-    width: 2rem;
+    background: #ffffff;
+    width: 3.3rem;
     height: 2rem;
     margin: 2rem;
-    border-radius: 50%;
+    border-radius: 0.5rem;
     box-shadow: 0.2rem 0 rgba(0, 0 ,0 , 0.2);
     cursor: pointer;
     display: block;
-    outline: 0.2rem solid rgb(40, 49, 39);
-    outline-offset: 0.2rem;
-    color: #060000;
+    outline: 0.1rem solid rgb(23, 120, 13);
+    color: #000000;
     font-size: 0.8rem;
     transform: translate(0, -5rem);
 }
@@ -37,7 +38,7 @@
     color: #ffffff;
     border: none;
     outline: 0;
-    border-bottom: 0.01rem solid #43af09;
+    border-bottom: 0.01rem solid #fbfcfc;
 }
 .inputPw {
     width: 100%;
@@ -45,16 +46,18 @@
     background: none;
     color: #ffffff;
     border: none;
-    outline: 0;
-    border-bottom: 0.01rem solid #43af09;
+
+    border-bottom: 0.01rem solid #fbfcfc;
 }
 
 .btnEnterTS {
     padding: 0.7rem;
     transform: translate(12rem, 0.5rem);
     border-radius: 1rem;
-    background: #284817;
-    box-shadow: 0.1rem 0.1rem rgba(0, 0 ,0 , 0.2);
+    background: #FFFFFF;
+    box-shadow: 0.5rem 0.1rem rgba(23, 120 , 13, 0.);
+    border-color: rgb(23, 120, 13);
+    color: #000000;
 }
 
 @media screen and (max-width: 768px) {
