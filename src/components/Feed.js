@@ -1,6 +1,7 @@
 import { createPost } from '../lib/FireBase.js';
 
-export const postFeed = () => {
+
+export const postFeed = (onNavigate) => {
   const HomeDiv = document.createElement('div');
 
   const headingPost = document.createElement('h2');
@@ -15,9 +16,16 @@ export const postFeed = () => {
   buttonPost.id = 'btn-post';
   buttonPost.textContent = 'Share';
 
+  const buttonLogout = document.createElement('button');
+  buttonLogout.id = 'btn-logout';
+  buttonLogout.textContent = 'Logout';
+  buttonLogout.addEventListener('click', () => onNavigate('/'));
+  
+
   HomeDiv.appendChild(headingPost);
   HomeDiv.appendChild(inputPost);
   HomeDiv.appendChild(buttonPost);
+  HomeDiv.appendChild(buttonLogout);
 
   buttonPost.addEventListener('click', () => {
     const newPost = {

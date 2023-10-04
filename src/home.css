@@ -1,3 +1,7 @@
+.home-body {
+  background-color: #303030
+}
+
 body {
   margin: 0;
   overflow: hidden; /* Para ocultar el desplazamiento vertical */
