@@ -60,7 +60,7 @@ export const Login = (onNavigate) => {
   loginForm.appendChild(btnLogin);
   HomeDiv.appendChild(loginForm);
 
-  loginForm.addEventListener('submit', (e) => {
+  btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
 
     const email = inputEmail.value;
