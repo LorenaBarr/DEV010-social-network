@@ -1,9 +1,10 @@
-body {
+.home-body {
+  background-color: #f1fcfa;
   margin: 0;
   overflow: hidden; /* Para ocultar el desplazamiento vertical */
   position: relative; /* Añade position:relative para que los elementos se apilen */
-  background-color: #303030;
 }
+
 
 #container {
   display: flex;
@@ -12,20 +13,9 @@ body {
   height: 100vh; /* Hace que el contenedor ocupe todo el alto de la ventana */
 }
 
-/* Establece el estilo para el canvas (fondo) */
-#canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Ocupa todo el ancho de la ventana */
-  height: 100%; /* Ocupa todo el alto de la ventana */
-  z-index: -1; /* Coloca el canvas detrás de otros elementos */
-  
-}
-
 /* Establece el estilo para el contenedor de contenido (centrado) */
 #root {
-  background-color: rgba(73, 73, 73, 0.8); /* Fondo semi-transparente para el contenido */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para el contenido */
   padding: 5rem; /* Agrega espacio alrededor del contenido */
   /* Otros estilos para el contenedor de contenido */
   display: flex;
@@ -39,7 +29,7 @@ body {
   width: 6rem;
   position: relative;
   border-radius: 3rem;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .header {
@@ -48,7 +38,7 @@ body {
   /* Otros estilos para el encabezado si es necesario */
   font-family: 'Pixelify Sans', cursive;
   font-size: 1rem;
-  color:#fff
+  color:#303030;
   
 }
 
@@ -68,7 +58,8 @@ h1 {
   padding: 0.6rem 1.3rem;
   font-size: 1.1rem;
   border-radius: 1rem;
-  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+  border-color:rgba(0, 255, 157, 0.2) ;
+  box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
 }
 
 #googleButton {
@@ -101,7 +92,7 @@ h1 {
     align-items: center;
   }
 
-  /* Establece el estilo para el canvas (fondo) en móvil */
+  Establece el estilo para el canvas (fondo) en móvil */
   #canvas {
    position: absolute;
     top: 0;
