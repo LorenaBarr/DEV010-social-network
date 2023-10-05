@@ -46,6 +46,8 @@ export const postFeed = (onNavigate) => {
   const readDocs = () => {
     const consulta = query(collection(db, "posts"));
     onSnapShot(consulta, (querySnapshot) => {
+     
+
       const posts = [];
       querySnapshot.forEach((doc) => {
         posts.push(doc.data().textPost);
