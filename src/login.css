@@ -60,6 +60,33 @@
     color: #000000;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    left: 35rem;
+    top: 12rem;
+    width: 10%;
+    height: 30%;
+    overflow: hidden;
+    background-color: rgba(250, 248, 248, 0.8);
+}
+
+.modalContent {
+    margin: 60% auto;
+    padding: 10px;
+    border: 1px transparent #888;
+    width: 80%;
+    color: #0c0b0b;
+
+}
+.closeModal {
+    color: #040404;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
 
 }
