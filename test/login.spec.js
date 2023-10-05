@@ -12,9 +12,9 @@ global.window = window;
 global.document = window.document;
 
 describe('test de login', () => {
-  // beforeEach(() => {
-  //   authentication.signInWithEmailAndPassword = jest.fn();
-  // });
+  beforeEach(() => {
+    authentication.signInWithEmailAndPassword = jest.fn();
+  });
 
   it('should return home with button', () => {
     const onNavigate = jest.fn();
@@ -26,7 +26,7 @@ describe('test de login', () => {
     expect(onNavigate).toHaveBeenCalledWith('/');
   });
 
-  it('credentials valid should log in and navigate to "/feed"',async () => {
+  it('credentials valid should log in and navigate to "/feed"', async () => {
     const loginSpy = jest.spyOn(authentication, 'login');
     loginSpy.mockResolvedValue({ user: { email: 'example@email.com' } });
 
