@@ -8,28 +8,29 @@ export const Register = (onNavigate) => {
 
 
   const buttonHome = document.createElement('button');
-
-  buttonHome.textContent = 'Return to Home';
+  buttonHome.id = 'return';
+  buttonHome.textContent = 'Return';
   buttonHome.addEventListener('click', () => onNavigate('/'));
-
+  
   HomeDiv.appendChild(buttonHome);
 
   const inputEmail = document.createElement('input');
   inputEmail.type = 'email';
   inputEmail.placeholder = 'Email';
-  inputEmail.classList.add('Email');
+  inputEmail.classList.add('email', 'inputs');
 
   HomeDiv.appendChild(inputEmail);
 
   const inputPassword = document.createElement('input');
   inputPassword.type = 'password';
   inputPassword.placeholder = 'Password';
-  inputPassword.classList.add('password');
+  inputPassword.classList.add('password', 'inputs');
 
   HomeDiv.appendChild(inputPassword);
 
   const btnCreate = document.createElement('button');
   btnCreate.textContent = 'Create Account';
+ btnCreate.id = 'create'
 
   HomeDiv.appendChild(btnCreate);
 

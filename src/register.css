@@ -27,3 +27,46 @@
     align-items: center; /* Centra los elementos horizontalmente */
     border-radius: 2rem;
   }
+ #return{
+    margin: 0.3rem;
+    padding: 0.6rem 1.3rem;
+    font-size: 0.8rem;
+    border-radius: 1rem;
+    border-color:rgba(0, 255, 157, 0.2) ;
+    box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
+    transform: translate(-11rem, -4rem);
+  }
+  .inputs{
+    width: 100%;
+    margin: 0.1rem;
+    max-width: 400px;
+    background: none;
+    position: relative;
+    overflow: hidden;
+    transform: translate(1rem, -3rem);
+  }
+  .email {
+    width: 100%;
+    height: 50%;
+    background: none;
+    color: #ffffff;
+    border: none;
+    border-bottom: 0.01rem solid #000000;
+  }
+ .password{
+    width: 100%;
+    height: 50%;
+    background: none;
+    color: #ffffff;
+    border: none;
+    border-bottom: 0.01rem solid #000000;
+}
+ #create {
+  margin: 0.3rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  border-color:rgba(0, 255, 157, 0.2) ;
+  box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
+  transform: translate(10rem , -1rem);
+ }
