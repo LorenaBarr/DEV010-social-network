@@ -2,10 +2,11 @@ import { createAccount } from '../lib/FireBase';
 
 export const Register = (onNavigate) => {
   const HomeDiv = document.createElement('div');
+  HomeDiv.id = 'divRegister';
   const registerForm = document.createElement('form');
   document.body.classList.add('register-body');
 
-  HomeDiv.textContent = 'WelcometoTechShare';
+
   const buttonHome = document.createElement('button');
 
   buttonHome.textContent = 'Return to Home';

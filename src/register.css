@@ -1,3 +1,29 @@
 .register-body {
-background-color: #303030;
-}
+    background-color: #f1fcfa;
+    margin: 0;
+    overflow: hidden; /* Para ocultar el desplazamiento vertical */
+    position: relative; /* Añade position:relative para que los elementos se apilen */
+  }
+  
+#divRegister {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
+  #container {
+   
+    height: 100vh; /* Hace que el contenedor ocupe todo el alto de la ventana */
+  }
+  
+  /* Establece el estilo para el contenedor de contenido (centrado) */
+  #root {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para el contenido */
+    padding: 5rem; /* Agrega espacio alrededor del contenido */
+    /* Otros estilos para el contenedor de contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    border-radius: 2rem;
+  }
