@@ -5,7 +5,7 @@ import { postFeed } from './components/Feed.js';
 
 const rootDiv = document.getElementById('root');
 
-const routes = {
+export const routes = {
   '/': Home,
   '/register': Register,
   '/login': Login,

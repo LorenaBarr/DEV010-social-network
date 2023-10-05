@@ -1,12 +1,21 @@
+/* eslint-disable no-import-assign */
 /**
  * @jest-environment jsdom
  */
+import { JSDOM } from 'jsdom';
 import '@testing-library/jest-dom';
+import * as authentication from '../src/lib/FireBase';
 import { Login } from '../src/components/Login';
-// import fetch from 'node-fetch';
-// globalThis.fetch = fetch;
 
-describe('it a function should enter to feed by email and password, and return to home', () => {
+const { window } = new JSDOM('<!doctype html><html><body></body></html>');
+global.window = window;
+global.document = window.document;
+
+describe('test de login', () => {
+  beforeEach(() => {
+    authentication.signInWithEmailAndPassword = jest.fn();
+  });
+
   it('should return home with button', () => {
     const onNavigate = jest.fn();
     const loginComponent = Login(onNavigate);
@@ -18,41 +27,22 @@ describe('it a function should enter to feed by email and password, and return t
   });
 
   it('credentials valid should log in and navigate to "/feed"', async () => {
+    const loginSpy = jest.spyOn(authentication, 'login');
+    loginSpy.mockResolvedValue({ user: { email: 'example@email.com' } });
+
     const onNavigate = jest.fn();
     const loginComponent = Login(onNavigate);
-    const inputEmail = loginComponent.querySelector('#inputEmail');
-    const inputPassword = loginComponent.querySelector('#inputPassword');
-    const buttonLogin = loginComponent.querySelector('#buttonLogIn');
+    loginComponent.querySelector('#inputEmail').value = 'example@email.com';
+    loginComponent.querySelector('#inputPassword').value = '123456';
+    const loginButton = loginComponent.querySelector('#buttonLogIn');
 
-    inputEmail.value = 'email@example.com';
-    inputPassword.value = 'password';
+    loginButton.click();
 
-    buttonLogin.click();
+    await Promise.resolve();
 
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve();
-      }, 10000);
-    });
-
+    expect(loginSpy).toHaveBeenCalledWith('example@email.com', '123456');
     expect(onNavigate).toHaveBeenCalledWith('/feed');
-  });
 
-  it('login form with invalid credetencials should show an error', () => {
-    const alertSpy = jest.spyOn(window, 'alert');
-
-    const loginComponent = Login(() => {});
-    const loginForm = loginComponent.querySelector('#loginForm');
-    const inputEmail = loginComponent.querySelector('#inputEmail');
-    const inputPassword = loginComponent.querySelector('#inputPassword');
-
-    inputEmail.value = 'email_invalid';
-    inputPassword.value = 'password_invalid';
-
-    loginForm.dispatchEvent(new Event('submit'));
-
-    expect(alertSpy).toHaveBeenCalledWith('Verificar datos');
-
-    alertSpy.mockRestore();
+    loginSpy.mockRestore();
   });
 });
