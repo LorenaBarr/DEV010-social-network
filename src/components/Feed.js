@@ -40,5 +40,20 @@ export const postFeed = (onNavigate) => {
         console.log(error);
       });
   });
+
+  
+
+  const readDocs = () => {
+    const consulta = query(collection(db, "posts"));
+    onSnapShot(consulta, (querySnapshot) => {
+      const posts = [];
+      querySnapshot.forEach((doc) => {
+        posts.push(doc.data().textPost);
+      });
+      console.table(posts);
+    });
+  }
+  readDocs()
+
   return HomeDiv;
 };
