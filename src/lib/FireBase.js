@@ -3,7 +3,9 @@ import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
   GoogleAuthProvider, signInWithPopup,
 } from 'firebase/auth';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import {
+  getFirestore, collection, addDoc, query, onSnapshot,
+} from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDUapyJiYR7BeMGzuAtLUTDJkaX7dTZA2s',
@@ -20,6 +22,9 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
+export const firestoreQuery = query;
+export const firestoreOnSnapshot = onSnapshot;
+
 export const googleSign = () => {
   const provider = new GoogleAuthProvider();
   return signInWithPopup(auth, provider);
@@ -28,8 +33,8 @@ export const googleSign = () => {
 export const createAccount = (email, psw) => createUserWithEmailAndPassword(auth, email, psw);
 export const login = (email, psw) => signInWithEmailAndPassword(auth, email, psw);
 
-export const createPost = (obj) => {
-  return addDoc(collection(db, "postFeed"), {
-    ...obj
-  })
-};
+export const createPost = (obj) => addDoc(collection(db, 'postFeed'), {
+  ...obj,
+});
+
+export const refPost = () => query(collection(db, 'postFeed'));
