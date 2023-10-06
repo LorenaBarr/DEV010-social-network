@@ -3,19 +3,22 @@ import { refPost } from '../lib/FireBase';
 
 export const ListPost = () => {
   const section = document.createElement('section');
-//   const h2 = document.createElement('h2');
-//   h2.textContent = 'Listaaaa';
 
+ 
   onSnapshot(refPost(), (querySnapshot) => {
-    const cities = [];
+    section.innerHTML = '';
     querySnapshot.forEach((doc) => {
-      console.log(doc.data().textPost);
+      // console.log(doc.data().textPost);
+      const article = document.createElement('article')
       const textPost = document.createElement('p');
+      const btnDeletePost = document.createElement('button');
       textPost.textContent = doc.data().textPost;
-      section.append(textPost)
+      btnDeletePost.textContent = 'Eliminar'
+      article.append(textPost, btnDeletePost)
+      section.appendChild(article)
     });
-    //   console.log("Current cities in CA: ", cities.join(", "));
+   
   });
-//   section.append(h2);
+
   return section;
 };

@@ -43,36 +43,5 @@ export const postFeed = (onNavigate) => {
   HomeDiv.appendChild(buttonPost);
   HomeDiv.appendChild(buttonLogout);
   HomeDiv.appendChild(ListPost())
-
-  // const readDocs = () => {
-  //   const consulta = firestoreQuery(collection(db, 'posts'));
-  //   firestoreOnSnapshot(consulta, (querySnapshot) => {
-  //     querySnapshot.forEach((doc) => {
-  //       const postElement = document.createElement('div');
-  //       postElement.classList.add('post');
-        
-  //       const postData = doc.data();
-  //       const postDate = postData.datePost.toDate(); // Convierte la fecha a un objeto Date
-  //       const postText = postData.textPost;
-
-  //       const dateElement = document.createElement('p');
-  //       dateElement.textContent = `Date: ${postDate.toLocaleString()}`; // Muestra la fecha formateada
-  //       postElement.appendChild(dateElement);
-
-  //       const textElement = document.createElement('p');
-  //       textElement.textContent = `Idea: ${postText}`;
-  //       postElement.appendChild(textElement);
-
-  //       HomeDiv.appendChild(postElement);
-  //     });
-
-     
-
-  //     // while (HomeDiv.firstChild) {
-  //     //   HomeDiv.removeChild(HomeDiv.firstChild);
-  //     // }
-  //   });
-  // };
-  // readDocs();
   return HomeDiv;
 };
