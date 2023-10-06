@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   createPost, firestoreQuery, firestoreOnSnapshot, db
 } from '../lib/FireBase.js';
@@ -5,6 +6,11 @@ import { collection } from 'firebase/firestore';
 import { ListPost } from './ListPost.js';
 
 export const postFeed = (onNavigate) => {
+=======
+import { createPost } from '../lib/FireBase.js';
+
+export const postFeed = () => {
+>>>>>>> main
   const HomeDiv = document.createElement('div');
 
   const headingPost = document.createElement('h2');
@@ -18,6 +24,10 @@ export const postFeed = (onNavigate) => {
   const buttonPost = document.createElement('button');
   buttonPost.id = 'btn-post';
   buttonPost.textContent = 'Share';
+
+  HomeDiv.appendChild(headingPost);
+  HomeDiv.appendChild(inputPost);
+  HomeDiv.appendChild(buttonPost);
 
   buttonPost.addEventListener('click', () => {
     const newPost = {

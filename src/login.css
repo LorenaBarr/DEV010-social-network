@@ -1,7 +1,7 @@
-.login-body {   
+.login-body {
     width: 100%;
-    height: 100vh; 
-    background-color: #303030;
+    height: 100vh;
+    background-color: #f1fcfa;
     display: flex;
     justify-content: center;
 }
@@ -9,18 +9,13 @@
 
 }
 .btnHome {
-    background: #ffffff;
-    width: 3.3rem;
-    height: 2rem;
-    margin: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0.2rem 0 rgba(0, 0 ,0 , 0.2);
-    cursor: pointer;
-    display: block;
-    outline: 0.1rem solid rgb(23, 120, 13);
-    color: #000000;
-    font-size: 0.8rem;
-    transform: translate(0, -5rem);
+  margin: 0.3rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  border-color:rgba(0, 255, 157, 0.2) ;
+  box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
+  transform: translate(1rem, -5rem);
 }
 .inputLogin {
     width: 100%;
@@ -38,7 +33,7 @@
     color: #ffffff;
     border: none;
     outline: 0;
-    border-bottom: 0.01rem solid #fbfcfc;
+    border-bottom: 0.01rem solid #000000;
 }
 .inputPw {
     width: 100%;
@@ -46,20 +41,18 @@
     background: none;
     color: #ffffff;
     border: none;
-
-    border-bottom: 0.01rem solid #fbfcfc;
+    border-bottom: 0.01rem solid #000000;
 }
 
 .btnEnterTS {
-    padding: 0.7rem;
-    transform: translate(12rem, 0.5rem);
-    border-radius: 1rem;
-    background: #FFFFFF;
-    box-shadow: 0.5rem 0.1rem rgba(23, 120 , 13, 0.);
-    border-color: rgb(23, 120, 13);
-    color: #000000;
+    margin: 0.3rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  border-color:rgba(0, 255, 157, 0.2) ;
+  box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
+ transform: translate(12rem, 0.5rem);
 }
-
 .modal {
     display: none;
     position: fixed;
