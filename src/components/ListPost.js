@@ -1,10 +1,7 @@
 import { onSnapshot } from 'firebase/firestore';
 import { refPost } from '../lib/FireBase';
-
 export const ListPost = () => {
   const section = document.createElement('section');
-
- 
   onSnapshot(refPost(), (querySnapshot) => {
     section.innerHTML = '';
     querySnapshot.forEach((doc) => {
@@ -17,8 +14,6 @@ export const ListPost = () => {
       article.append(textPost, btnDeletePost)
       section.appendChild(article)
     });
-   
   });
-
   return section;
 };
