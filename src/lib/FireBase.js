@@ -31,5 +31,5 @@ export const login = (email, psw) => signInWithEmailAndPassword(auth, email, psw
 export const createPost = (obj) => {
   return addDoc(collection(db, "postFeed"), {
     ...obj
-  })
+  }),
 };
