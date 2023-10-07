@@ -1,5 +1,5 @@
 import { onSnapshot } from 'firebase/firestore';
-import { refPost } from '../lib/FireBase';
+import { refPost, deletePost } from '../lib/FireBase';
 
 export const ListPost = () => {
   const section = document.createElement('section');
@@ -16,8 +16,14 @@ export const ListPost = () => {
       section.appendChild(article);
 
       btnDeletePost.addEventListener('click', () => {
-        article.innerHTML = '';
-        console.log(btnDeletePost);
+        const postId = doc.id;
+        deletePost(postId)
+          .then(() => {
+            console.log(`Documento con ID ${postId} eliminado.`);
+          })
+          .catch((error) => {
+            console.error('Error al eliminar:', error);
+          });
       });
     });
   });
