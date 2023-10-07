@@ -1,8 +1,6 @@
-import {
-  createPost, firestoreQuery, firestoreOnSnapshot, db
-} from '../lib/FireBase.js';
-import { collection } from 'firebase/firestore';
+import { createPost } from '../lib/FireBase.js';
 import { ListPost } from './ListPost.js';
+
 export const postFeed = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const headingPost = document.createElement('h2');
@@ -31,10 +29,6 @@ export const postFeed = (onNavigate) => {
   buttonLogout.id = 'btn-logout';
   buttonLogout.textContent = 'Logout';
   buttonLogout.addEventListener('click', () => onNavigate('/'));
-  HomeDiv.appendChild(headingPost);
-  HomeDiv.appendChild(inputPost);
-  HomeDiv.appendChild(buttonPost);
-  HomeDiv.appendChild(buttonLogout);
-  HomeDiv.appendChild(ListPost())
+  HomeDiv.append(headingPost, inputPost, buttonPost, buttonLogout, ListPost());
   return HomeDiv;
 };
