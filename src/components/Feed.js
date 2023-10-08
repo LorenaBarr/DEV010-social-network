@@ -3,6 +3,7 @@ import {
 } from '../lib/FireBase.js';
 import { collection } from 'firebase/firestore';
 import { ListPost } from './ListPost.js';
+
 export const postFeed = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const headingPost = document.createElement('h2');
