@@ -20,6 +20,7 @@ export const Feed = (onNavigate) => {
       datePost: new Date(),
       textPost: textareaPost.value,
     };
+    textareaPost.value = '';
     createPost(newPost)
       .then(() => {
       })
