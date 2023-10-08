@@ -22,10 +22,8 @@ export const Feed = (onNavigate) => {
     };
     createPost(newPost)
       .then(() => {
-        console.log(newPost);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
       });
   });
   const buttonLogout = document.createElement('button');
