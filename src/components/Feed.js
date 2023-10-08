@@ -7,6 +7,7 @@ export const postFeed = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const headingPost = document.createElement('h2');
   headingPost.textContent = 'Create Post';
+  headingPost.id = 'createPost';
   const inputPost = document.createElement('input');
   inputPost.type = 'text';
   inputPost.id = 'post-text';

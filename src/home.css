@@ -23,6 +23,7 @@
   justify-content: center; /* Centra los elementos verticalmente */
   align-items: center; /* Centra los elementos horizontalmente */
   border-radius: 2rem;
+  box-shadow: 0 0 20px #01ffeedc;
 }
 
 .logo{
