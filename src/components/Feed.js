@@ -1,4 +1,4 @@
-import { createPost } from '../lib/FireBase.js';
+import { createPost, auth } from '../lib/FireBase.js';
 import { ListPost } from './ListPost.js';
 
 export const Feed = (onNavigate) => {
@@ -19,14 +19,18 @@ export const Feed = (onNavigate) => {
     const newPost = {
       datePost: new Date(),
       textPost: textareaPost.value,
+      uid: auth.currentUser.uid,
+      likes: [],
     };
     textareaPost.value = '';
+
     createPost(newPost)
       .then(() => {
       })
       .catch(() => {
       });
   });
+
   const buttonLogout = document.createElement('button');
   buttonLogout.id = 'btn-logout';
   buttonLogout.textContent = 'Logout';

@@ -4,7 +4,7 @@
  */
 import { JSDOM } from 'jsdom';
 import { Feed } from '../src/components/Feed';
-import { firebaseFunctions } from '../src/lib/FireBase';
+//import { ListPost } from '../src/components/ListPost';
 
 const { window } = new JSDOM('<!doctype html><html><body></body></html>');
 global.window = window;
@@ -34,18 +34,26 @@ describe('test of feed', () => {
   it('should create a new post when clicking the "Share" button', () => {
     const createPostMock = jest.fn();
 
-    const feedComponent = Feed(createPostMock);
-    container.appendChild(feedComponent);
+    const rootDiv = document.createElement('div');
+    document.body.appendChild(rootDiv);
+
+    const onNavigate = jest.fn();
+
+    const feedComponent = Feed(onNavigate, createPostMock);
+    rootDiv.appendChild(feedComponent);
 
     const textarea = container.querySelector('#post-text');
-    textarea.value = '';
+    textarea.value = 'This is a test post';
 
-    const shareButton = container.querySelector('#btn-post');
+    const shareButton = rootDiv.querySelector('#btn-post');
     shareButton.click();
 
     expect(createPostMock).toHaveBeenCalledWith({
       datePost: expect.any(Date),
       textPost: 'This is a test post',
+      uid: expect.any(String),
+      likes: [],
     });
+    document.body.removeChild(rootDiv);
   });
 });
