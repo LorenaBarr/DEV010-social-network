@@ -2,6 +2,7 @@ import { Home } from './components/Home.js';
 import { Register } from './components/Register.js';
 import { Login } from './components/Login.js';
 import { postFeed } from './components/Feed.js';
+import { auth } from './lib/FireBase.js';
 
 const rootDiv = document.getElementById('root');
 
@@ -9,7 +10,14 @@ export const routes = {
   '/': Home,
   '/register': Register,
   '/login': Login,
-  '/feed': postFeed,
+  '/feed': () => {
+    const user = auth.currentUser;
+    if (user) {
+      return postFeed(onNavigate);
+    }
+    onNavigate('/');
+    return null;
+  },
 };
 
 export const onNavigate = (pathname) => {
