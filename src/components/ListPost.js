@@ -1,9 +1,14 @@
-import { onSnapshot, updateDoc, doc } from 'firebase/firestore';
+import {
+  onSnapshot, updateDoc, doc, query, orderBy,
+}
+from 'firebase/firestore';
 import { refPost, deletePost, auth, db } from '../lib/FireBase';
 
 export const ListPost = () => {
   const section = document.createElement('section');
-  onSnapshot(refPost(), (querySnapshot) => {
+  const postQuery = query(refPost(), orderBy('datePost', 'desc'));
+
+  onSnapshot(postQuery, (querySnapshot) => {
     section.innerHTML = '';
     querySnapshot.forEach((postDoc) => {
       // console.log(doc.data().textPost);
@@ -12,6 +17,7 @@ export const ListPost = () => {
       const likesCount = document.createElement('span');
       const btnLike = document.createElement('button');
       const btnDeletePost = document.createElement('button');
+
       textPost.textContent = postDoc.data().textPost;
       likesCount.textContent = `Likes: ${postDoc.data().likes.length}`;
       btnLike.textContent = 'Like';

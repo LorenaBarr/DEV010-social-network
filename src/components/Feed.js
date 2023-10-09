@@ -6,23 +6,23 @@ export const Feed = (onNavigate) => {
   const headingPost = document.createElement('h2');
   headingPost.textContent = 'Create Post';
 
-  const textareaPost = document.createElement('textarea');
-  textareaPost.cols = 24;
-  textareaPost.rows = 5;
-  textareaPost.id = 'post-text';
-  textareaPost.placeholder = 'Share your idea';
+  const inputPost = document.createElement('input');
+  inputPost.id = 'post-text';
+  inputPost.placeholder = 'Share your idea';
 
+  const uidPost = auth.currentUser ? auth.currentUser.uid : null;
   const buttonPost = document.createElement('button');
   buttonPost.id = 'btn-post';
   buttonPost.textContent = 'Share';
+
   buttonPost.addEventListener('click', () => {
     const newPost = {
       datePost: new Date(),
-      textPost: textareaPost.value,
-      uid: auth.currentUser.uid,
+      textPost: inputPost.value,
+      uid: uidPost,
       likes: [],
     };
-    textareaPost.value = '';
+    inputPost.value = '';
 
     createPost(newPost)
       .then(() => {
@@ -36,7 +36,7 @@ export const Feed = (onNavigate) => {
   buttonLogout.textContent = 'Logout';
   buttonLogout.addEventListener('click', () => onNavigate('/'));
 
-  HomeDiv.append(headingPost, textareaPost, buttonPost, buttonLogout, ListPost());
+  HomeDiv.append(headingPost, inputPost, buttonPost, buttonLogout, ListPost());
 
   return HomeDiv;
 };
