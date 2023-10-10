@@ -11,8 +11,17 @@ global.window = window;
 global.document = window.document;
 
 describe('test of feed', () => {
+  let createPostMock;
+
+  beforeEach(() => {
+    createPostMock = jest.fn();
+  });
+
+  afterEach(() => {
+    createPostMock.mockClear();
+  });
+
   it('should creates a new post when clicking button', async () => {
-    const createPostMock = jest.fn();
     const rootDiv = document.createElement('div');
     document.body.appendChild(rootDiv);
 
@@ -23,7 +32,6 @@ describe('test of feed', () => {
 
     const inputPost = rootDiv.querySelector('#post-text');
     inputPost.value = 'This is a test post';
-    console.log(inputPost);
 
     const btnPost = rootDiv.querySelector('#btn-post');
     btnPost.click();

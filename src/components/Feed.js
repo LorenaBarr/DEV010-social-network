@@ -6,11 +6,14 @@ export const Feed = (onNavigate) => {
   const headingPost = document.createElement('h2');
   headingPost.textContent = 'Create Post';
 
+  const buttonLogout = document.createElement('button');
+  buttonLogout.id = 'btn-logout';
+  buttonLogout.textContent = 'Logout';
+
   const inputPost = document.createElement('input');
   inputPost.id = 'post-text';
   inputPost.placeholder = 'Share your idea';
 
-  const uidPost = auth.currentUser ? auth.currentUser.uid : null;
   const buttonPost = document.createElement('button');
   buttonPost.id = 'btn-post';
   buttonPost.textContent = 'Share';
@@ -19,24 +22,24 @@ export const Feed = (onNavigate) => {
     const newPost = {
       datePost: new Date(),
       textPost: inputPost.value,
-      uid: uidPost,
+      uid: auth.currentUser ? auth.currentUser.uid : null,
       likes: [],
     };
     inputPost.value = '';
 
     createPost(newPost)
-      .then(() => {
-      })
-      .catch(() => {
-      });
+      .then(() => {})
+      .catch(() => {});
   });
 
-  const buttonLogout = document.createElement('button');
-  buttonLogout.id = 'btn-logout';
-  buttonLogout.textContent = 'Logout';
   buttonLogout.addEventListener('click', () => onNavigate('/'));
 
-  HomeDiv.append(headingPost, inputPost, buttonPost, buttonLogout, ListPost());
+  HomeDiv.append(headingPost, buttonLogout, inputPost, buttonPost, ListPost());
+
+  const listPostsContainer = document.createElement('div');
+  listPostsContainer.id = 'list-post';
+
+  HomeDiv.appendChild(listPostsContainer);
 
   return HomeDiv;
 };

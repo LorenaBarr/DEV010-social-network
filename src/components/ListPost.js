@@ -1,8 +1,10 @@
 import {
   onSnapshot, updateDoc, doc, query, orderBy,
 }
-from 'firebase/firestore';
-import { refPost, deletePost, auth, db } from '../lib/FireBase';
+  from 'firebase/firestore';
+import {
+  refPost, deletePost, auth, db,
+} from '../lib/FireBase';
 
 export const ListPost = () => {
   const section = document.createElement('section');
@@ -11,7 +13,6 @@ export const ListPost = () => {
   onSnapshot(postQuery, (querySnapshot) => {
     section.innerHTML = '';
     querySnapshot.forEach((postDoc) => {
-      // console.log(doc.data().textPost);
       const article = document.createElement('article');
       const textPost = document.createElement('p');
       const likesCount = document.createElement('span');
