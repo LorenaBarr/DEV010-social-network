@@ -48,3 +48,54 @@ describe('Tests for the postfeed component (Ruta)', () => {
     expect(ListPostMock).toHaveBeenCalled();
   });
 });
+
+
+// /* eslint-disable no-import-assign */
+// /**
+//  * @jest-environment jsdom
+//  */
+// import { JSDOM } from 'jsdom';
+// import { Feed } from '../src/components/Feed';
+// // import { ListPost } from '../src/components/ListPost';
+
+// const { window } = new JSDOM('<!doctype html><html><body></body></html>');
+// global.window = window;
+// global.document = window.document;
+
+// describe('test of feed', () => {
+//   let createPostMock;
+
+//   beforeEach(() => {
+//     createPostMock = jest.fn();
+//   });
+
+//   afterEach(() => {
+//     createPostMock.mockClear();
+//   });
+
+//   it('should creates a new post when clicking button', async () => {
+//     const rootDiv = document.createElement('div');
+//     document.body.appendChild(rootDiv);
+
+//     const onNavigate = jest.fn();
+
+//     const feedComponent = Feed(onNavigate, createPostMock);
+//     rootDiv.appendChild(feedComponent);
+
+//     const inputPost = rootDiv.querySelector('#post-text');
+//     inputPost.value = 'This is a test post';
+
+//     const btnPost = rootDiv.querySelector('#btn-post');
+//     btnPost.click();
+
+//     await Promise.resolve();
+
+//     expect(createPostMock).toHaveBeenCalledWith({
+//       datePost: expect.any(Date),
+//       textPost: 'This is a test post',
+//       uid: expect.any(String),
+//       likes: [],
+//     });
+//     document.body.removeChild(rootDiv);
+//   });
+// });
