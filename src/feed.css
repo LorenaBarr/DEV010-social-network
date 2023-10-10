@@ -1,7 +1,28 @@
-.feed-body {
-
-.post {
-  /* border: 1px solid #000000;
-  padding: 10px;
-  margin-bottom: 10px; */
+#post-text{
+  width: 100%;
+  height: 50%;
+  background: none;
+  color: #ffffff;
+  border: none;
+  border-bottom: 0.01rem solid #000000;
+}
+#createPost{
+  color: rgb(14, 15, 15);
+  font-family: 'Pixelify Sans', cursive;
+}
+#btn-post{
+  margin: 0.3rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  border-color:rgba(0, 255, 157, 0.2) ;
+  box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
+}
+#btn-logout{
+ margin: 0.3rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  border-color:rgba(0, 255, 157, 0.2) ;
+  box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
 }

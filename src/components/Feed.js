@@ -5,7 +5,7 @@ export const postFeed = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const headingPost = document.createElement('h2');
   headingPost.textContent = 'Create Post';
-
+  headingPost.id = 'createPost';
   const buttonLogout = document.createElement('button');
   buttonLogout.id = 'btn-logout';
   buttonLogout.textContent = 'Logout';
