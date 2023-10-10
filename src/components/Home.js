@@ -20,10 +20,7 @@ export const Home = (onNavigate) => {
   sloganElement.textContent = 'Share your ideas & thoughts';
   sloganElement.classList.add('slogan');
 
- 
-  headerDiv.appendChild(logoElement);
-  headerDiv.appendChild(titleElement);
-  headerDiv.appendChild(sloganElement);
+  headerDiv.append(logoElement, titleElement, sloganElement);
 
   HomeDiv.appendChild(headerDiv);
 
@@ -62,15 +59,13 @@ export const Home = (onNavigate) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        //console.error('error when starting with google', errorCode, errorMessage);
       });
   });
   // botones al contenddor//
   buttonContainer.appendChild(buttonLogin);
   buttonContainer.appendChild(buttonRegister);
 
-  HomeDiv.appendChild(buttonContainer);
-  HomeDiv.appendChild(buttonGoogle);
+  HomeDiv.append(buttonContainer, buttonGoogle);
 
   return HomeDiv;
 };

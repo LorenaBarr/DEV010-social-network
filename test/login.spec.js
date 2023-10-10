@@ -2,16 +2,12 @@
 /**
  * @jest-environment jsdom
  */
-import { JSDOM } from 'jsdom';
+
 import '@testing-library/jest-dom';
 import * as authentication from '../src/lib/FireBase';
 import { Login } from '../src/components/Login';
 
-const { window } = new JSDOM('<!doctype html><html><body></body></html>');
-global.window = window;
-global.document = window.document;
-
-describe('test de login', () => {
+describe('test of login', () => {
   beforeEach(() => {
     authentication.signInWithEmailAndPassword = jest.fn();
   });

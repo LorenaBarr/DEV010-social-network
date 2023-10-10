@@ -6,37 +6,30 @@ export const Register = (onNavigate) => {
   const registerForm = document.createElement('form');
   document.body.classList.add('register-body');
 
-
   const buttonHome = document.createElement('button');
   buttonHome.id = 'return';
   buttonHome.textContent = 'Return';
   buttonHome.addEventListener('click', () => onNavigate('/'));
-  
-  HomeDiv.appendChild(buttonHome);
 
   const inputEmail = document.createElement('input');
   inputEmail.type = 'email';
   inputEmail.placeholder = 'Email';
   inputEmail.classList.add('email', 'inputs');
 
-  HomeDiv.appendChild(inputEmail);
-
   const inputPassword = document.createElement('input');
   inputPassword.type = 'password';
   inputPassword.placeholder = 'Password';
   inputPassword.classList.add('password', 'inputs');
 
-  HomeDiv.appendChild(inputPassword);
+  HomeDiv.append(buttonHome, inputEmail, inputPassword);
 
   const btnCreate = document.createElement('button');
   btnCreate.textContent = 'Create Account';
- btnCreate.id = 'create'
+  btnCreate.id = 'create';
 
   HomeDiv.appendChild(btnCreate);
 
-  registerForm.appendChild(inputEmail);
-  registerForm.appendChild(inputPassword);
-  registerForm.appendChild(btnCreate);
+  registerForm.append(inputEmail, inputPassword, btnCreate);
 
   HomeDiv.appendChild(registerForm);
 

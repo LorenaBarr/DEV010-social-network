@@ -22,7 +22,7 @@ describe('Register Component', () => {
     container.appendChild(Register(onNavigate));
     // Verificar que el componente se haya renderizado correctamente
     expect(container.querySelector('form')).toBeTruthy();
-    expect(container.querySelector('.Email')).toBeTruthy();
+    expect(container.querySelector('.email')).toBeTruthy();
     expect(container.querySelector('.password')).toBeTruthy();
     expect(container.querySelector('button')).toBeTruthy();
   });
