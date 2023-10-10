@@ -1,7 +1,8 @@
 import { createPost, auth } from '../lib/FireBase.js';
+import { collection } from 'firebase/firestore';
 import { ListPost } from './ListPost.js';
 
-export const Feed = (onNavigate) => {
+export const postFeed = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const headingPost = document.createElement('h2');
   headingPost.textContent = 'Create Post';
@@ -32,14 +33,18 @@ export const Feed = (onNavigate) => {
       .catch(() => {});
   });
 
-  buttonLogout.addEventListener('click', () => onNavigate('/'));
+  buttonLogout.id = 'btn-logout';
+  buttonLogout.textContent = 'Logout';
+  buttonLogout.addEventListener('click', () => {
+    auth.signOut().then(() => {
+      onNavigate('/');
+    });
+  });
 
-  HomeDiv.append(headingPost, buttonLogout, inputPost, buttonPost, ListPost());
-
-  const listPostsContainer = document.createElement('div');
-  listPostsContainer.id = 'list-post';
-
-  HomeDiv.appendChild(listPostsContainer);
-
+  HomeDiv.appendChild(headingPost);
+  HomeDiv.appendChild(inputPost);
+  HomeDiv.appendChild(buttonPost);
+  HomeDiv.appendChild(buttonLogout);
+  HomeDiv.appendChild(ListPost());
   return HomeDiv;
 };
