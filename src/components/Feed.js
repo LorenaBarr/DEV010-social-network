@@ -1,5 +1,4 @@
 import { createPost, auth } from '../lib/FireBase.js';
-import { collection } from 'firebase/firestore';
 import { ListPost } from './ListPost.js';
 
 export const postFeed = (onNavigate) => {
