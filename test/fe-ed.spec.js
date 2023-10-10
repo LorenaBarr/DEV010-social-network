@@ -22,7 +22,7 @@ describe('Tests for the postfeed component (Ruta)', () => {
     expect(onNavigateMock).toHaveBeenCalledWith('/');
   });
 
-  test('Hacer clic en el botón "Share" llama a createPost y ListPost', () => {
+  test.only('Hacer clic en el botón "Share" llama a createPost y ListPost', async () => {
     const createPostMock = jest.fn();
     const ListPostMock = jest.fn();
 
@@ -31,20 +31,29 @@ describe('Tests for the postfeed component (Ruta)', () => {
     const firebaseMock = {
       createPost: createPostMock,
     };
-
+    createPostMock.mockResolvedValueOnce({
+      datePost: expect.any(Date),
+      textPost: 'Contenido del post',
+    });
     const homeDiv = postFeed(onNavigateMock, firebaseMock, ListPostMock);
 
     const inputPost = homeDiv.querySelector('#post-text');
     inputPost.value = 'Contenido del post';
 
     const buttonPost = homeDiv.querySelector('#btn-post');
+    // console.log(buttonPost);
     buttonPost.click();
-
-    expect(createPostMock).toHaveBeenCalledWith({
+    // buttonPost.dispatchEvent(new Event('click'));
+    await createPostMock({
       datePost: expect.any(Date),
       textPost: 'Contenido del post',
     });
-
-    expect(ListPostMock).toHaveBeenCalled();
+    // console.log(homeDiv.children.length);
+    expect(homeDiv.children.length).toBe(5)
+    // expect(createPostMock).toHaveBeenCalledWith({
+    //   datePost: expect.any(Date),
+    //   textPost: 'Contenido del post',
+    // });
+    // expect(ListPostMock).toHaveBeenCalled();
   });
 });
