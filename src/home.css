@@ -82,6 +82,8 @@ h1 {
   margin: 0;
   padding: 0;
   width: 12rem;
+
+
 }
 @media screen and (max-width: 375px) {
   body {
