@@ -18,10 +18,13 @@ export const ListPost = () => {
       const likesCount = document.createElement('span');
       const btnLike = document.createElement('button');
       const btnDeletePost = document.createElement('button');
+      
 
       textPost.textContent = postDoc.data().textPost;
       likesCount.textContent = `Likes: ${postDoc.data().likes.length}`;
+      btnLike.id = 'buttonlike';
       btnLike.textContent = 'Like';
+      btnDeletePost.id = 'buttondelete';
       btnDeletePost.textContent = 'Eliminar';
 
       article.append(textPost, likesCount, btnLike, btnDeletePost);

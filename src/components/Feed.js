@@ -3,6 +3,7 @@ import { ListPost } from './ListPost.js';
 
 export const postFeed = (onNavigate) => {
   const HomeDiv = document.createElement('div');
+  HomeDiv.id = 'divpost';
   const headingPost = document.createElement('h2');
   headingPost.textContent = 'Create Post';
   headingPost.id = 'createPost';
