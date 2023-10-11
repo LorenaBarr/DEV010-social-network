@@ -19,10 +19,25 @@
   box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
 }
 #btn-logout{
- margin: 0.3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 15rem;
+  margin-top: 5rem;
   padding: 0.6rem 1.3rem;
   font-size: 0.8rem;
   border-radius: 1rem;
   border-color:rgba(0, 255, 157, 0.2) ;
   box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
+}
+
+article {
+  border: #6ce7be 0.3rem solid;
+  margin: 1rem;
+  
+}
+
+.posts-section {
+  max-height: 400px; /* Establece la altura máxima que desees */
+  overflow-y: auto; /* Habilita la barra de desplazamiento vertical cuando sea necesario */
 }

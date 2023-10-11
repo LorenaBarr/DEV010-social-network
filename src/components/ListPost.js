@@ -8,6 +8,7 @@ import {
 
 export const ListPost = () => {
   const section = document.createElement('section');
+  section.classList.add('posts-section');
   const postQuery = query(refPost(), orderBy('datePost', 'desc'));
 
   onSnapshot(postQuery, (querySnapshot) => {
