@@ -18,14 +18,27 @@ export const ListPost = () => {
       const likesCount = document.createElement('span');
       const btnLike = document.createElement('button');
       const btnDeletePost = document.createElement('button');
+      const trashIcon = document.createElement('i');
+      const heartIcon = document.createElement('i');
 
       textPost.textContent = postDoc.data().textPost;
       likesCount.textContent = `Likes: ${postDoc.data().likes.length}`;
-      btnLike.textContent = 'Like';
-      btnDeletePost.textContent = 'Eliminar';
+      // btnLike.textContent = 'Like';
+      // btnDeletePost.textContent = 'Eliminar';
+      btnDeletePost.id = 'btn-delete';
+      btnDeletePost.classList.add('btn-danger');
+      trashIcon.className = 'fa-solid fa-trash';
+      trashIcon.style.color = '#41d2c9';
+      trashIcon.title = 'Delete';
+      heartIcon.className = 'fa-solid fa-heart fa-beat';
+      heartIcon.style.color = '#4ed0af';
+      heartIcon.title = 'Like';
 
-      article.append(textPost, likesCount, btnLike, btnDeletePost);
+      article.append(textPost, likesCount, btnLike, btnDeletePost, trashIcon, heartIcon);
       section.appendChild(article);
+      btnDeletePost.appendChild(trashIcon);
+      btnLike.appendChild(heartIcon);
+      // btnDeletePost.appendChild(document.createTextNode('Delete'));
 
       btnLike.addEventListener('click', () => {
         const postId = postDoc.id;
@@ -42,7 +55,7 @@ export const ListPost = () => {
         }
 
         const postRef = doc(db, 'postFeed', postId);
-        updateDoc(postRef, { likes: likes })
+        updateDoc(postRef, { likes })
           .then(() => {
             console.log('Like actualizado');
           })
