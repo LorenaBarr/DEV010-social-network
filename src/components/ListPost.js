@@ -23,17 +23,8 @@ export const ListPost = () => {
       const heartIcon = document.createElement('i');
 
       textPost.textContent = postDoc.data().textPost;
-<<<<<<< HEAD
       likesCount.textContent = `${postDoc.data().likes.length}`;
-      buttonLike.textContent = 'Like';
       buttonLike.id = 'btn-like';
-      btnDeletePost.textContent = 'Eliminar';
-
-      article.append(textPost, likesCount, buttonLike, btnDeletePost);
-=======
-      likesCount.textContent = `Likes: ${postDoc.data().likes.length}`;
-      // btnLike.textContent = 'Like';
-      // btnDeletePost.textContent = 'Eliminar';
       btnDeletePost.id = 'btn-delete';
       btnDeletePost.classList.add('btn-danger');
       trashIcon.className = 'fa-solid fa-trash';
@@ -43,11 +34,10 @@ export const ListPost = () => {
       heartIcon.style.color = '#4ed0af';
       heartIcon.title = 'Like';
 
-      article.append(textPost, likesCount, btnLike, btnDeletePost, trashIcon, heartIcon);
->>>>>>> 174a600da5300ea3db49955c160b5f18d0415fff
+      article.append(textPost, likesCount, buttonLike, btnDeletePost, trashIcon, heartIcon);
       section.appendChild(article);
       btnDeletePost.appendChild(trashIcon);
-      btnLike.appendChild(heartIcon);
+      buttonLike.appendChild(heartIcon);
       // btnDeletePost.appendChild(document.createTextNode('Delete'));
 
       buttonLike.addEventListener('click', () => {

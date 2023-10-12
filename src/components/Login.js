@@ -3,7 +3,6 @@ import { login } from '../lib/FireBase';
 export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const loginForm = document.createElement('form');
-  const imgHome = document.createElement('img');
   const buttonHome = document.createElement('button');
   const inputEmail = document.createElement('input');
   const inputPassword = document.createElement('input');

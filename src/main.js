@@ -5,6 +5,19 @@ import { postFeed } from './components/Feed.js';
 import { auth } from './lib/FireBase.js';
 
 const rootDiv = document.getElementById('root');
+export const onNavigate = (pathname) => {
+  window.history.pushState(
+    {},
+    pathname,
+    window.location.origin + pathname,
+  );
+
+  while (rootDiv.firstChild) {
+    rootDiv.removeChild(rootDiv.firstChild);
+  }
+  // eslint-disable-next-line no-use-before-define
+  rootDiv.appendChild(routes[pathname](onNavigate));
+};
 
 export const routes = {
   '/': Home,
@@ -18,19 +31,6 @@ export const routes = {
     onNavigate('/');
     return null;
   },
-};
-
-export const onNavigate = (pathname) => {
-  window.history.pushState(
-    {},
-    pathname,
-    window.location.origin + pathname,
-  );
-
-  while (rootDiv.firstChild) {
-    rootDiv.removeChild(rootDiv.firstChild);
-  }
-  rootDiv.appendChild(routes[pathname](onNavigate));
 };
 
 const pathname = window.location.pathname;
