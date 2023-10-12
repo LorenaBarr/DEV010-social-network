@@ -19,10 +19,11 @@ describe('Tests for the postfeed component (Ruta)', () => {
     const homeDiv = postFeed(onNavigateMock);
     const buttonLogout = homeDiv.querySelector('#btn-logout');
     buttonLogout.click();
+
     expect(onNavigateMock).toHaveBeenCalledWith('/');
   });
 
-  test.only('Hacer clic en el botón "Share" llama a createPost y ListPost', async () => {
+  test('Hacer clic en el botón "Share" llama a createPost y ListPost', async () => {
     const createPostMock = jest.fn();
     const ListPostMock = jest.fn();
 
@@ -41,19 +42,30 @@ describe('Tests for the postfeed component (Ruta)', () => {
     inputPost.value = 'Contenido del post';
 
     const buttonPost = homeDiv.querySelector('#btn-post');
-    // console.log(buttonPost);
+
     buttonPost.click();
-    // buttonPost.dispatchEvent(new Event('click'));
+
     await createPostMock({
       datePost: expect.any(Date),
       textPost: 'Contenido del post',
     });
-    // console.log(homeDiv.children.length);
-    expect(homeDiv.children.length).toBe(5)
-    // expect(createPostMock).toHaveBeenCalledWith({
-    //   datePost: expect.any(Date),
-    //   textPost: 'Contenido del post',
-    // });
-    // expect(ListPostMock).toHaveBeenCalled();
+
+    expect(homeDiv.children).toHaveLength(5);
+  });
+  test('El botón permite dar "like" a una publicación en ListPost', async () => {
+    const listPostDiv = document.createElement('div');
+    const postComponent = ListPost();
+    listPostDiv.appendChild(postComponent);
+
+    const buttonLike = postComponent.querySelector('#btn-like');
+
+    const likesBeforeClick = parseInt(buttonLike.previousElementSibling.textContent, 10);
+
+    buttonLike.click();
+    console.log(buttonLike);
+
+    const likesAfterClick = parseInt(buttonLike.previousElementSibling.textContent, 10);
+
+    expect(likesAfterClick).toBe(likesBeforeClick + 1);
   });
 });
