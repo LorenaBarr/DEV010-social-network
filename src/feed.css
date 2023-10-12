@@ -2,8 +2,8 @@
   background: none;
   color: #000000;
   border: none;
-  padding: 0 rem;
-  border-bottom: 0.01rem solid #000000;
+  padding: 0.36rem;
+  border-bottom: 0.1rem solid #5c988b;
   transform: translate(30px, 10px);
 }
 #divpost {
@@ -12,24 +12,24 @@
 }
 #createPost{
   margin-left: 4.1rem;
-  color: rgb(14, 15, 15);
+  color: rgb(63, 67, 67);
   font-family: 'Pixelify Sans', cursive;
 }
 #btn-post{
   margin: 2rem;
-  padding: 0.6rem 1.3rem;
+  padding: 0.6rem 1rem;
   font-size: 0.8rem;
   border-radius: 1rem;
   border-color:rgba(0, 255, 157, 0.2) ;
   transform: translate(63px, 10px);
 }
 #btn-logout{
-  padding: 0.6rem 1.3rem;
+  padding: 0.6rem 0.8rem;
   font-size: 0.8rem;
   border-radius: 1rem;
   border-color:rgba(0, 255, 157, 0.2) ;
   box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
-  transform: translate(260px, -280px);
+  transform: translate(270px, -280px);
 }
 section {
   margin: 1rem 1rem;
@@ -64,14 +64,26 @@ article {
   max-height: 400px; /* Establece la altura máxima que desees */
   overflow-y: auto; /* Habilita la barra de desplazamiento vertical cuando sea necesario */
 }
-
-@media screen and (max-width: ) {
-
-  
+@media screen and (min-width: 376px) and (max-width: 419px) { 
+  #btn-logout{
+    transform: translate(60px, -240px);
+  }
 }
 
-@media screen and (min-width: 360px) and (max-width: 768px) { 
+@media screen and (min-width: 420px) and (max-width: 670px) { 
   #btn-logout{
-    transform: translate(265px, -280px);
+    transform: translate(120px, -240px);
+  }
+}
+
+@media screen and (min-width: 474px) and (max-width: 670px) { 
+  #btn-logout{
+    transform: translate(280px, -310px);
+  }
+}
+
+@media screen and (min-width: 671px) and (max-width: 998px) { 
+  #btn-logout{
+    transform: translate(280px, -310px);
   }
 }
