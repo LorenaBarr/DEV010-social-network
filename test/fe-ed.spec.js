@@ -5,6 +5,8 @@ import '@testing-library/jest-dom';
 import { postFeed } from '../src/components/Feed';
 import { ListPost } from '../src/components/ListPost';
 
+jest.mock('firebase/auth');
+
 describe('Tests for the postfeed component (Ruta)', () => {
   test('postFeed es una funcion', () => {
     expect(typeof postFeed).toBe('function');
@@ -58,11 +60,10 @@ describe('Tests for the postfeed component (Ruta)', () => {
     listPostDiv.appendChild(postComponent);
 
     const buttonLike = postComponent.querySelector('#btn-like');
-
+    console.log(postComponent.innerHTML);
     const likesBeforeClick = parseInt(buttonLike.previousElementSibling.textContent, 10);
 
     buttonLike.click();
-    console.log(buttonLike);
 
     const likesAfterClick = parseInt(buttonLike.previousElementSibling.textContent, 10);
 
