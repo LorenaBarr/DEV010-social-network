@@ -1,7 +1,80 @@
-.feed-body {
+#post-text{
+  background: none;
+  color: #000000;
+  border: none;
+  border-bottom: 0.01rem solid #000000;
+}
+#divpost {
+  border-radius: 1rem;
+  border-color:rgba(0, 255, 157, 0.2) ;
+}
+#createPost{
+  margin-left:1rem;
+  color: rgb(14, 15, 15);
+  font-family: 'Pixelify Sans', cursive;
+}
+#btn-post{
+  margin: 2rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  border-color:rgba(0, 255, 157, 0.2) ;
+}
+#btn-logout{
+  margin: 0.3rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  border-color:rgba(239, 121, 10, 0.2);
+  background-color: rgba(0, 179, 255, 0.201);
+}
+section {
+  margin: 1rem 1rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 179, 255, 0.062);
+}
+#buttondelete {
+  margin: 2rem .2rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+  border-radius: 6rem;
+  border-color:rgba(255, 123, 0, 0.2) ;
+  background-color: rgba(255, 0, 0, 0.174);
+  
+}
+#buttonlike {
+  margin: .3rem .7rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+  border-radius: 6rem;
+  background-color:rgba(4, 0, 255, 0.078) ;
+}
+article {
+    padding: 0.6rem 1.3rem;
+    background-color: rgba(193, 224, 227, 0.016);
+   
+  }
+  #btn-logout{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 15rem;
+  margin-top: 8rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  border-color:rgba(0, 255, 157, 0.2) ;
+  box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
+}
 
-.post {
-  /* border: 1px solid #000000;
-  padding: 10px;
-  margin-bottom: 10px; */
+article {
+  border: #6ce7be 0.3rem solid;
+  margin: 1rem;
+  
+}
+
+.posts-section {
+  max-height: 400px; /* Establece la altura máxima que desees */
+  overflow-y: auto; /* Habilita la barra de desplazamiento vertical cuando sea necesario */
 }

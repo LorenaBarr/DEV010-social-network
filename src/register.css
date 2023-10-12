@@ -34,7 +34,7 @@
     border-radius: 1rem;
     border-color:rgba(0, 255, 157, 0.2) ;
     box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
-    transform: translate(-11rem, -4rem);
+    transform: translate(-6rem, -4rem);
   }
   .inputs{
     width: 100%;
@@ -57,7 +57,7 @@
     width: 100%;
     height: 50%;
     background: none;
-    color: #ffffff;
+    color: #000000;
     border: none;
     border-bottom: 0.01rem solid #000000;
 }
