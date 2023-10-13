@@ -4,6 +4,7 @@
 import '@testing-library/jest-dom';
 import { postFeed } from '../src/components/Feed';
 import { ListPost } from '../src/components/ListPost';
+import { async } from 'regenerator-runtime';
 
 jest.mock('firebase/auth');
 
@@ -16,12 +17,17 @@ describe('Tests for the postfeed component (Ruta)', () => {
     expect(typeof ListPost).toBe('function');
   });
 
-  test('El botón de Logout lleva a la ruta de home', () => {
+  test('El botón de Logout lleva a la ruta de home', async () => {
     const onNavigateMock = jest.fn();
+    const authsignoutMock = jest.fn(() => Promise.resolve());
+
     const homeDiv = postFeed(onNavigateMock);
     const buttonLogout = homeDiv.querySelector('#btn-logout');
     buttonLogout.click();
 
+    await authsignoutMock();
+
+    expect(authsignoutMock).toHaveBeenCalledWith(1);
     expect(onNavigateMock).toHaveBeenCalledWith('/');
   });
 
@@ -58,9 +64,10 @@ describe('Tests for the postfeed component (Ruta)', () => {
     const listPostDiv = document.createElement('div');
     const postComponent = ListPost();
     listPostDiv.appendChild(postComponent);
+    document.body.appendChild(listPostDiv);
 
     const buttonLike = postComponent.querySelector('#btn-like');
-    console.log(postComponent.innerHTML);
+    
     const likesBeforeClick = parseInt(buttonLike.previousElementSibling.textContent, 10);
 
     buttonLike.click();
@@ -68,5 +75,6 @@ describe('Tests for the postfeed component (Ruta)', () => {
     const likesAfterClick = parseInt(buttonLike.previousElementSibling.textContent, 10);
 
     expect(likesAfterClick).toBe(likesBeforeClick + 1);
+    document.body.removeChild(listPostDiv);
   });
 });
