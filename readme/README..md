@@ -88,49 +88,30 @@ Los usuarios pueden interactuar con sus propias publicaciones dando la opcion de
 ## Diseño de interfaz
 Para comenzar se realizó un prototipo de baja fidelidad 
 
-<img src>
+ ![prototipo-bajafidelidad](<../src/imagenes/prototipo baja.jpg>)
 
 
  Se realizo un prototipo de alta fidelidad en Figma donde se muestra el funcionamiento y diseño de la página en cada una de las vistas. 
 Se realizo un logo para la app
 
-<img src>
+![prototipo-altafidelidad](<../src/imagenes/prototipo baja.jpg>)
+
 
 se realizo una serie de test de usuabilidad y en base a eso fuimos eligiendo el mejor diseño que se adaptara a nuestra idea
 ## diseño final
-De acuerdo a los test de usuabilidad se decidio dejar el siguiente diseño 
+De acuerdo a los test de usuabilidad se decidio dejar el siguiente diseño, incluyendo la parte responsive.
 
 "HOME"
-
-img
+![home](<../src/imagenes/final home.jpeg>)
 
 "LOGIN"
 
-img
-
+ ![login](../src/imagenes/login.jpeg)
 "REGISTER"
 
-img
+![register](../src/imagenes/register.jpeg)
 
 "FEED"
-img
-## responsive
-En esta parte mostraremos la parte responsive de las vistas
-
-"HOME"
-
-IMG
-
-"LOGIN"
-
-IMG
-
-"REGISTER"
-
-IMG
-
-"FEED"
-
-IMG
+![post](../src/imagenes/post.jpeg)
 ## pruebas unitarias
 se realizaron las pruebas unitarias de cada de las vistas
