@@ -3,6 +3,8 @@
 
 Bienvenida a esta nueva red social TechShare
 El objetivo de este proyecto tiene como proposito ser una red social en la que se puedan compartir desde dudas, memes, investigaciones, o cualquie tipo de dato que sea sobre el area de tecnologia.
+En esta Red Social se permite a cualquier usuario crear una cuenta de acceso
+y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
 
 ## Historias de usuario
 Historia de Usuario-1

@@ -1,46 +1,121 @@
-# Creando una Red Social
+# social-network TechShare
 
-## Índice
-
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-
-## 1. Preámbulo
-
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
-vivir sin ellas.
-
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
-
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
-
-## 2. Resumen del proyecto
-
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
-Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
-o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco),
-de la [Feijoada](https://es.wikipedia.org/wiki/Feijoada), o de lo que sea.
-
-Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de acceso
+Bienvenida a esta nueva red social TechShare
+El objetivo de este proyecto tiene como proposito ser una red social en la que se puedan compartir desde dudas, memes, investigaciones, o cualquie tipo de dato que sea sobre el area de tecnologia.
+En esta Red Social se permite a cualquier usuario crear una cuenta de acceso
 y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
 
-Por lo tanto, en este proyecto construirás una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://curriculum.laboratoria.la/es/topics/css/02-responsive) (con más de una vista / página)
-en la que podamos **leer y escribir datos**.
+## Historias de usuario
+Historia de Usuario-1
+
+Yo/como: Usuario interesado en programación.
+Quiero: Poder registrarme y crear una cuenta en "TechShare".
+Para: Acceder a todas las funcionalidades de la plataforma y ser parte de la comunidad.
+
+Criterios de Aceptación:
+
+Debe haber un formulario de registro en la interfaz.
+El formulario debe incluir campos para nombre de usuario, correo electrónico y contraseña.
+Debe haber una opción para registrarse usando una cuenta de Google.
+Después de registrarse, el usuario debe poder iniciar sesión con su cuenta.
+Definición de Terminado:
+
+El formulario de registro debe funcionar correctamente.
+Los datos de usuario deben almacenarse de manera segura.
+El usuario debe poder iniciar sesión después de registrarse.
+Actividad
+
+
+Historia de Usuario-2
+
+Yo/como: Usuario registrado en "TechShare" o programador.
+Quiero: Iniciar sesión en mi cuenta para acceder a todas las funcionalidades de la plataforma.
+Para: Participar en la comunidad, publicar ejemplos de código y acceder a recursos educativos.
+
+Criterios de Aceptación:
+
+Debe haber un formulario de inicio de sesión en la interfaz.
+El formulario debe incluir campos para correo electrónico y contraseña.
+Debe haber una opción para iniciar sesión con una cuenta de Google.
+Definición de Terminado:
+
+El formulario de inicio de sesión debe funcionar correctamente.
+Los usuarios deben poder acceder a sus cuentas después de iniciar sesión.
+
+Historia de usuario-3
+
+Yo/como: Usuario interesado en la tecnologia/programacion.
+Quiero: Poder publicar mis ideas y reflexiones sobre programación en "TechShare."
+Para: Compartir conocimientos, experiencias o preguntas con la comunidad y obtener retroalimentación.
+
+Criterios de Aceptación:
+
+Debe haber una sección en la plataforma para crear y publicar pensamientos.
+Los usuarios deben poder escribir y formatear sus ideas en un editor de texto.
+Las publicaciones deben incluir campos para el título y las etiquetas.
+Debe haber validaciones para garantizar que se incluya contenido en la publicación.
+Definición de Terminado:
+
+Los usuarios pueden crear y publicar sus pensamientos en la plataforma.
+Los pensamientos se muestran en el muro/timeline de la comunidad.
+
+Historia de usuario-4
+
+Yo/como: Usuario registrado en "TechShare."
+Quiero: Poder interactuar con los pensamientos de otros usuarios dando "like" y editando mis propios pensamientos.
+Para: Participar en discusiones, mostrar aprecio por los pensamientos de otros y mejorar mis propios pensamientos.
+
+Criterios de Aceptación:
+
+Los usuarios deben poder dar "like" a los pensamientos de otros usuarios.
+Debe haber un sistema de comentarios en los pensamientos para permitir discusiones.
+Los usuarios pueden editar sus propios pensamientos después de publicarlos.
+Debe haber una confirmación antes de eliminar un pensamiento.
+Definición de Terminado:
+
+Los usuarios pueden interactuar con los pensamientos de otros usuarios dando "like" y comentando.
+Los usuarios pueden editar sus propios pensamientos después de publicarlos.
+
+Historia de usuario-5
+ Yo/como: Usuario registrado en "TechShare." Quiero: Poder eliminar los post.
+
+ Criterios de Aceptación:
+
+Los usuarios deben poder "eliminar" a sus propios pensamientos. Debe haber un sistema de comentarios un boton en el que ellos puedan realizar esta funcion 
+
+ Definición de Terminado:
+
+Los usuarios pueden interactuar con sus propias publicaciones dando la opcion de eliminar si asi lo requieren.
+## Diseño de interfaz
+Para comenzar se realizó un prototipo de baja fidelidad 
+
+![baja](<../src/imagenes/prototipo baja.jpg>)
+
+
+ Se realizo un prototipo de alta fidelidad en Figma donde se muestra el funcionamiento y diseño de la página en cada una de las vistas. 
+Se realizo un logo para la app
+
+![alta](<../src/imagenes/prototipo de alta.jpeg>)
+
+
+se realizo una serie de test de usuabilidad y en base a eso fuimos eligiendo el mejor diseño que se adaptara a nuestra idea
+## diseño final
+De acuerdo a los test de usuabilidad se decidio dejar el siguiente diseño, incluyendo la parte responsive.
+
+"HOME"
+![home](../src/imagenes/home.jpg)
+
+"LOGIN"
+
+ ![login](../src/imagenes/login.jpeg)
+"REGISTER"
+
+![register](../src/imagenes/register.jpeg)
+
+"FEED"
+![post](../src/imagenes/post.jpeg)
+## pruebas unitarias
+se realizaron las pruebas unitarias de cada de las vistas
 
 ### Los objetivos generales de este proyecto son los siguientes
 
