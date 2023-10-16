@@ -13,7 +13,11 @@ describe('Tests for the Google Sign-In functionality', () => {
   test('googleSign se llama cuando se hace clic en el botón de Google', async () => {
     // Crea un mock para onNavigateMock y googleSign
     const onNavigateMock = jest.fn();
+
+    // eslint-disable-next-line no-import-assign
     FirebaseModule.googleSign = jest.fn(() => Promise.resolve());
+
+    // FirebaseModule.googleSign = jest.fn(() => Promise.resolve());
 
     // Simula el comportamiento del botón de Google Sign-In
     const homeDiv = Home(onNavigateMock);

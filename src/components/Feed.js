@@ -46,5 +46,6 @@ export const postFeed = (onNavigate) => {
   HomeDiv.appendChild(buttonPost);
   HomeDiv.appendChild(buttonLogout);
   HomeDiv.appendChild(ListPost());
+
   return HomeDiv;
 };

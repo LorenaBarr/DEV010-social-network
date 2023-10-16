@@ -56,9 +56,7 @@ export const Home = (onNavigate) => {
         console.log('User identified with Google', user);
         onNavigate('/feed');
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+      .catch(() => {
       });
   });
   // botones al contenddor//

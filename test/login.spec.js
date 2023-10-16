@@ -7,6 +7,8 @@ import '@testing-library/jest-dom';
 import * as authentication from '../src/lib/FireBase';
 import { Login } from '../src/components/Login';
 
+jest.mock('firebase/auth');
+
 describe('test of login', () => {
   beforeEach(() => {
     authentication.signInWithEmailAndPassword = jest.fn();

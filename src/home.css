@@ -98,7 +98,7 @@ h1 {
     align-items: center;
   }
 
-  Establece el estilo para el canvas (fondo) en móvil */
+  /* Establece el estilo para el canvas (fondo) en móvil */
   #canvas {
    position: absolute;
     top: 0;
