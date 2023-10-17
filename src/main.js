@@ -5,19 +5,28 @@ import { postFeed } from './components/Feed.js';
 import { auth } from './lib/FireBase.js';
 
 const rootDiv = document.getElementById('root');
+
 export const onNavigate = (pathname) => {
   window.history.pushState(
     {},
     pathname,
     window.location.origin + pathname,
   );
+  renderRoute(pathname);
+};
 
+const renderRoute = (pathname) => {
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
   }
-  // eslint-disable-next-line no-use-before-define
-  rootDiv.appendChild(routes[pathname](onNavigate));
+  const component = routes[pathname] || Home;
+  rootDiv.appendChild(component(onNavigate));
 };
+
+// while (rootDiv.firstChild) {
+//   rootDiv.removeChild(rootDiv.firstChild);
+// }
+
 
 export const routes = {
   '/': Home,
@@ -28,6 +37,7 @@ export const routes = {
     if (user) {
       return postFeed(onNavigate);
     }
+    // Si no estás autenticado, redirige a la ruta de inicio
     // onNavigate('/');
     // return null;
     return postFeed(onNavigate);
@@ -35,13 +45,36 @@ export const routes = {
 };
 
 const pathname = window.location.pathname;
-const component = routes[pathname] || Home;
+renderRoute(pathname);
 
 window.onpopstate = () => {
-  while (rootDiv.firstChild) {
-    rootDiv.removeChild(rootDiv.firstChild);
-  }
-  rootDiv.appendChild(component(onNavigate));
+  const pathname = window.location.pathname;
+  renderRoute(pathname);
 };
 
-rootDiv.appendChild(component(onNavigate));
+// export const routes = {
+//   '/': Home,
+//   '/register': Register,
+//   '/login': Login,
+//   '/feed': () => {
+//     const user = auth.currentUser;
+//     if (user) {
+//       return postFeed(onNavigate);
+//     }
+//     // onNavigate('/');
+//     // return null;
+//     return postFeed(onNavigate);
+//   },
+// };
+
+// const pathname = window.location.pathname;
+// const component = routes[pathname] || Home;
+
+// window.onpopstate = () => {
+//   while (rootDiv.firstChild) {
+//     rootDiv.removeChild(rootDiv.firstChild);
+//   }
+//   rootDiv.appendChild(component(onNavigate));
+// };
+
+// rootDiv.appendChild(component(onNavigate));
