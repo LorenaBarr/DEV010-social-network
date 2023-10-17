@@ -1,11 +1,13 @@
 import { googleSign } from '../lib/FireBase';
+import { imgLogo } from '../imagenes/logotechshare_360.png';
+import { googleImg } from '../imagenes/signin-assets (1)/google_signin_buttons/web/2x/btn_google_signin_light_pressed_web@2x.png';
 
 export const Home = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   const logoElement = document.createElement('img');
 
   document.body.classList.add('home-body');
-  logoElement.src = '../imagenes/logotechshare_360.png'; // Agrega la ruta de tu logo
+  logoElement.src = imgLogo; // Agrega la ruta de tu logo
   logoElement.alt = 'Logo de TechShare'; // Agrega un atributo alt para accesibilidad
   logoElement.classList.add('logo');
 
@@ -40,7 +42,7 @@ export const Home = (onNavigate) => {
 
   const buttonGoogle = document.createElement('button');
   const imgGoogle = document.createElement('img');
-  imgGoogle.src = '../imagenes/signin-assets (1)/google_signin_buttons/web/2x/btn_google_signin_light_pressed_web@2x.png';
+  imgGoogle.src = googleImg;
   imgGoogle.alt = 'diseño botón de google';
   imgGoogle.id = 'imgGoogle';
   buttonGoogle.classList.add('btnGoogle');
