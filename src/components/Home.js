@@ -1,6 +1,6 @@
 import { googleSign } from '../lib/FireBase';
-import { imgLogo } from '../imagenes/logotechshare_360.png';
-import { googleImg } from '../imagenes/signin-assets (1)/google_signin_buttons/web/2x/btn_google_signin_light_pressed_web@2x.png';
+import imgLogo from '../imagenes/logotechshare_360.png';
+import googleImg from '../imagenes/signin-assets (1)/google_signin_buttons/web/2x/btn_google_signin_light_pressed_web@2x.png';
 
 export const Home = (onNavigate) => {
   const HomeDiv = document.createElement('div');
