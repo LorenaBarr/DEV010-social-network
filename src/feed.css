@@ -29,7 +29,7 @@
   border-radius: 1rem;
   border-color:rgba(0, 255, 157, 0.2) ;
   box-shadow: 1rem 1rem 1rem rgba(0, 255, 213, 0.2);
-  transform: translate(270px, -280px);
+  transform: translate(270px, -220px);
 }
 section {
   margin: 1rem 1rem;
@@ -66,7 +66,7 @@ article {
 }
 @media screen and (min-width: 376px) and (max-width: 419px) { 
   #btn-logout{
-    transform: translate(60px, -240px);
+    transform: translate(270px, -240px);
   }
 }
 
@@ -84,6 +84,6 @@ article {
 
 @media screen and (min-width: 671px) and (max-width: 998px) { 
   #btn-logout{
-    transform: translate(280px, -310px);
+    transform: translate(280px, -230px);
   }
 }
