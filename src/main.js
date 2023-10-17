@@ -28,8 +28,9 @@ export const routes = {
     if (user) {
       return postFeed(onNavigate);
     }
-    onNavigate('/');
-    return null;
+    // onNavigate('/');
+    // return null;
+    return postFeed(onNavigate);
   },
 };
 
